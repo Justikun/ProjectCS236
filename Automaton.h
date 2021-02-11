@@ -6,7 +6,7 @@
 #define PROJECT1_AUTOMATON_H
 
 
-#include "../Token.h"
+#include "Token.h"
 
 class Automaton {
 protected:

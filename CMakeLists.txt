@@ -3,4 +3,4 @@ project(project1)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(project1 main.cpp Lexer.cpp Lexer.h Token.cpp Token.h Automata/Automaton.cpp Automata/Automaton.h Automata/MatcherAutomaton.cpp Automata/MatcherAutomaton.h "Automata/NewLineAutomaton.cpp" "Automata/NewLineAutomaton.h" "Automata/CommentAutomaton.cpp" "Automata/CommentAutomaton.h" Automata/EndOfFileAutomaton.cpp Automata/EndOfFileAutomaton.h Automata/StringAutomaton.cpp Automata/StringAutomaton.h Automata/BlockCommentAutomaton.cpp Automata/BlockCommentAutomaton.h Automata/IDAutomaton.cpp Automata/IDAutomaton.h Automata/UndefinedAutomata.cpp Automata/UndefinedAutomata.h)
+add_executable(project1 main.cpp Lexer.cpp Lexer.h Token.cpp Token.h Automaton.cpp Automaton.h MatcherAutomaton.cpp MatcherAutomaton.h "NewLineAutomaton.cpp" "NewLineAutomaton.h" "CommentAutomaton.cpp" "CommentAutomaton.h" EndOfFileAutomaton.cpp EndOfFileAutomaton.h StringAutomaton.cpp StringAutomaton.h BlockCommentAutomaton.cpp BlockCommentAutomaton.h IDAutomaton.cpp IDAutomaton.h UndefinedAutomata.cpp UndefinedAutomata.h)

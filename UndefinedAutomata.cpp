@@ -50,16 +50,20 @@ int UndefinedAutomata::Start(const std::string &input) {
                 inputRead++;
                 break;
             case BAD_COMMENT:
+                if (input.at(inputRead) == '\n') {
+                    newLines++;
+                    if (inputRead + 1 >= input.size()) {
+                        currentState = ACCEPT;
+                        inputRead++;
+                        break;
+                    }
+                }
+
                 if (inputRead + 1 >= input.size()) {
                     currentState = ACCEPT;
                     break;
-                } else {
+                }
                     //state remains
-                }
-                if (input.at(inputRead) == '\n') {
-                    newLines++;
-                }
-
                 inputRead++;
                 break;
             case UNKNOWN:

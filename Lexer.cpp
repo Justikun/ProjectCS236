@@ -5,14 +5,14 @@
 #include "Lexer.h"
 #include <iostream>
 
-#include "Automata/MatcherAutomaton.h"
-#include "Automata/NewLineAutomaton.h"
-#include "Automata/CommentAutomaton.h"
-#include "Automata/EndOfFileAutomaton.h"
-#include "Automata/StringAutomaton.h"
-#include "Automata/BlockCommentAutomaton.h"
-#include "Automata/IDAutomaton.h"
-#include "Automata/UndefinedAutomata.h"
+#include "MatcherAutomaton.h"
+#include "NewLineAutomaton.h"
+#include "CommentAutomaton.h"
+#include "EndOfFileAutomaton.h"
+#include "StringAutomaton.h"
+#include "BlockCommentAutomaton.h"
+#include "IDAutomaton.h"
+#include "UndefinedAutomata.h"
 
 Lexer::Lexer() {
     automata.push_back(new EndOfFileAutomaton(END_OF_FILE));
@@ -114,13 +114,16 @@ void Lexer::printTokens() {
                     {UNDEFINED, "UNDEFINED"}
             };
 
-    for(auto & token : tokens) {
-        std::cout << "(" << tokenTypeMap.at(token->GetTokenType()) << ",\"" << token->GetInput() << "\"," << token->GetLineNumber() << ")\n";
+    for(size_t i=0;i<tokens.size();i++) {
+        std::cout << "(" << tokenTypeMap.at(tokens.at(i)->GetTokenType()) << ",\"" << tokens.at(i)->GetInput() << "\"," << tokens.at(i)->GetLineNumber() << ")";
+        if (i < tokens.size()) {
+            std::cout << '\n';
+        }
     }
 }
 
 void Lexer::printTokensSize() {
-    std::cout << "Total Tokens = " << tokens.size() << std::endl;
+    std::cout << "Total Tokens = " << tokens.size();
 }
 
 void Lexer::copyToOutPut() {
@@ -151,12 +154,13 @@ void Lexer::copyToOutPut() {
     if (!myfile.is_open()) {
         std::cout << "ERROR opening file" << std::endl;
     } else {
-        std::cout << "FILE OPENED\n";
-        for(auto & token : tokens) {
-            myfile << "(" << tokenTypeMap.at(token->GetTokenType()) << ",\"" << token->GetInput() << "\"," << token->GetLineNumber() << ")\n";
+        for(size_t i=0;i<tokens.size();i++) {
+            myfile << "(" << tokenTypeMap.at(tokens.at(i)->GetTokenType()) << ",\"" << tokens.at(i)->GetInput() << "\"," << tokens.at(i)->GetLineNumber() << ")";
+            if (i < tokens.size()) {
+                myfile << '\n';
+            }
         }
         myfile << "Total Tokens = " << tokens.size();
-        myfile << '\n';
         myfile.close();
     }
 }

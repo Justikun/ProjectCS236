@@ -89,10 +89,10 @@ int CommentAutomaton::Start(const std::string &input) {
 }
 
 Token *CommentAutomaton::CreateToken(std::string input, int lineNumber) {
-    for (size_t i=0;i<input.size();i++) {
-        if (input.at(i) == '\t') {
-            input.replace(i,i," ");
-        }
-    }
+//    for (size_t i=0;i<input.size();i++) {
+//        if (input.at(i) == '\t') {
+//            input.replace(i,i," ");
+//        }
+//    }
     return Automaton::CreateToken(input, lineNumber);
 }

@@ -10,7 +10,7 @@
 #include <fstream>
 
 #include "Token.h"
-#include "Automata/Automaton.h"
+#include "Automaton.h"
 
 class Lexer {
     private:
@@ -25,8 +25,6 @@ class Lexer {
         void printTokens();
         void printTokensSize();
         void copyToOutPut();
-        //changes have been made here
-        //changs here
         
 };
 

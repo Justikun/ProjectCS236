@@ -1,5 +1,4 @@
 #include <iostream>
-#include <fstream>
 #include <sstream>
 
 #include "Lexer.h"
@@ -25,7 +24,7 @@ int main(int argc, char* argv[]) {
     lexer.Run(inputString);
     lexer.printTokens();
     lexer.printTokensSize();
-    //lexer.copyToOutPut();
+    lexer.copyToOutPut();
 
 
 
