@@ -1,0 +1,2 @@
+(EOF,"",3)
+Total Tokens = 1

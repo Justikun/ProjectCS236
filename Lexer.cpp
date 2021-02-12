@@ -67,7 +67,9 @@ void Lexer::Run(std::string& inputString) {
         if (maxRead > 0) {
             //creates new token
             Token *newToken = maxAutomaton->CreateToken(inputString.substr(0, maxRead), lineNumber);
-            if (newToken->GetTokenType() != NEW_LINE) {
+            if (newToken->GetTokenType() == COMMENT) {
+                //don't pushback newToken
+            } else if (newToken->GetTokenType() != NEW_LINE) {
                 //adds token to out tokens vector
                 tokens.push_back(newToken);
                 lineNumber += maxAutomaton->NewLinesRead();
