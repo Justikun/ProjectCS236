@@ -4,6 +4,7 @@
 
 #include "Lexer.h"
 #include <iostream>
+#include "parser.h"
 
 #include "MatcherAutomaton.h"
 #include "NewLineAutomaton.h"
@@ -166,3 +167,8 @@ void Lexer::copyToOutPut() {
         myfile.close();
     }
 }
+
+std::vector<Token*> Lexer::getTokensVector() {
+    return tokens;
+}
+

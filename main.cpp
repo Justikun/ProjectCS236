@@ -2,6 +2,7 @@
 #include <sstream>
 
 #include "Lexer.h"
+#include "Parser.h"
 #include "string"
 
 
@@ -22,11 +23,20 @@ int main(int argc, char* argv[]) {
     Lexer lexer = Lexer();
 
     lexer.Run(inputString);
-    lexer.printTokens();
-    lexer.printTokensSize();
+//    lexer.printTokens();
+//    lexer.printTokensSize();
     lexer.copyToOutPut();
+    std::cout << std::endl;
+    Parser parser = Parser();
 
-
+    try {
+        parser.Parse(lexer.getTokensVector());
+    } catch (Token* token) {
+        std::cout << "Failure!" << std::endl << "  ";
+        token->PrintTokenAsString();
+        std::cout << std::endl;
+        //std::cout << "catch: " << token->GetInput() << std::endl;
+    }
 
 
     return 0;

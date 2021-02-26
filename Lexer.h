@@ -25,7 +25,7 @@ class Lexer {
         void printTokens();
         void printTokensSize();
         void copyToOutPut();
-        
+        std::vector<Token*> getTokensVector();
 };
 
 

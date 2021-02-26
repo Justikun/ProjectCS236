@@ -345,6 +345,150 @@ CMakeFiles/project1.dir/UndefinedAutomata.cpp.o.provides: CMakeFiles/project1.di
 CMakeFiles/project1.dir/UndefinedAutomata.cpp.o.provides.build: CMakeFiles/project1.dir/UndefinedAutomata.cpp.o
 
 
+CMakeFiles/project1.dir/Parser.cpp.o: CMakeFiles/project1.dir/flags.make
+CMakeFiles/project1.dir/Parser.cpp.o: ../Parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/project1.dir/Parser.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/Parser.cpp.o -c /tmp/tmp.LSKQsAtbMT/Parser.cpp
+
+CMakeFiles/project1.dir/Parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project1.dir/Parser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/tmp.LSKQsAtbMT/Parser.cpp > CMakeFiles/project1.dir/Parser.cpp.i
+
+CMakeFiles/project1.dir/Parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project1.dir/Parser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/tmp.LSKQsAtbMT/Parser.cpp -o CMakeFiles/project1.dir/Parser.cpp.s
+
+CMakeFiles/project1.dir/Parser.cpp.o.requires:
+
+.PHONY : CMakeFiles/project1.dir/Parser.cpp.o.requires
+
+CMakeFiles/project1.dir/Parser.cpp.o.provides: CMakeFiles/project1.dir/Parser.cpp.o.requires
+	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/Parser.cpp.o.provides.build
+.PHONY : CMakeFiles/project1.dir/Parser.cpp.o.provides
+
+CMakeFiles/project1.dir/Parser.cpp.o.provides.build: CMakeFiles/project1.dir/Parser.cpp.o
+
+
+CMakeFiles/project1.dir/ParserHelper.cpp.o: CMakeFiles/project1.dir/flags.make
+CMakeFiles/project1.dir/ParserHelper.cpp.o: ../ParserHelper.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/project1.dir/ParserHelper.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/ParserHelper.cpp.o -c /tmp/tmp.LSKQsAtbMT/ParserHelper.cpp
+
+CMakeFiles/project1.dir/ParserHelper.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project1.dir/ParserHelper.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/tmp.LSKQsAtbMT/ParserHelper.cpp > CMakeFiles/project1.dir/ParserHelper.cpp.i
+
+CMakeFiles/project1.dir/ParserHelper.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project1.dir/ParserHelper.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/tmp.LSKQsAtbMT/ParserHelper.cpp -o CMakeFiles/project1.dir/ParserHelper.cpp.s
+
+CMakeFiles/project1.dir/ParserHelper.cpp.o.requires:
+
+.PHONY : CMakeFiles/project1.dir/ParserHelper.cpp.o.requires
+
+CMakeFiles/project1.dir/ParserHelper.cpp.o.provides: CMakeFiles/project1.dir/ParserHelper.cpp.o.requires
+	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/ParserHelper.cpp.o.provides.build
+.PHONY : CMakeFiles/project1.dir/ParserHelper.cpp.o.provides
+
+CMakeFiles/project1.dir/ParserHelper.cpp.o.provides.build: CMakeFiles/project1.dir/ParserHelper.cpp.o
+
+
+CMakeFiles/project1.dir/DatalogProgram.cpp.o: CMakeFiles/project1.dir/flags.make
+CMakeFiles/project1.dir/DatalogProgram.cpp.o: ../DatalogProgram.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/project1.dir/DatalogProgram.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/DatalogProgram.cpp.o -c /tmp/tmp.LSKQsAtbMT/DatalogProgram.cpp
+
+CMakeFiles/project1.dir/DatalogProgram.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project1.dir/DatalogProgram.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/tmp.LSKQsAtbMT/DatalogProgram.cpp > CMakeFiles/project1.dir/DatalogProgram.cpp.i
+
+CMakeFiles/project1.dir/DatalogProgram.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project1.dir/DatalogProgram.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/tmp.LSKQsAtbMT/DatalogProgram.cpp -o CMakeFiles/project1.dir/DatalogProgram.cpp.s
+
+CMakeFiles/project1.dir/DatalogProgram.cpp.o.requires:
+
+.PHONY : CMakeFiles/project1.dir/DatalogProgram.cpp.o.requires
+
+CMakeFiles/project1.dir/DatalogProgram.cpp.o.provides: CMakeFiles/project1.dir/DatalogProgram.cpp.o.requires
+	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/DatalogProgram.cpp.o.provides.build
+.PHONY : CMakeFiles/project1.dir/DatalogProgram.cpp.o.provides
+
+CMakeFiles/project1.dir/DatalogProgram.cpp.o.provides.build: CMakeFiles/project1.dir/DatalogProgram.cpp.o
+
+
+CMakeFiles/project1.dir/Parameter.cpp.o: CMakeFiles/project1.dir/flags.make
+CMakeFiles/project1.dir/Parameter.cpp.o: ../Parameter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/project1.dir/Parameter.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/Parameter.cpp.o -c /tmp/tmp.LSKQsAtbMT/Parameter.cpp
+
+CMakeFiles/project1.dir/Parameter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project1.dir/Parameter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/tmp.LSKQsAtbMT/Parameter.cpp > CMakeFiles/project1.dir/Parameter.cpp.i
+
+CMakeFiles/project1.dir/Parameter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project1.dir/Parameter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/tmp.LSKQsAtbMT/Parameter.cpp -o CMakeFiles/project1.dir/Parameter.cpp.s
+
+CMakeFiles/project1.dir/Parameter.cpp.o.requires:
+
+.PHONY : CMakeFiles/project1.dir/Parameter.cpp.o.requires
+
+CMakeFiles/project1.dir/Parameter.cpp.o.provides: CMakeFiles/project1.dir/Parameter.cpp.o.requires
+	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/Parameter.cpp.o.provides.build
+.PHONY : CMakeFiles/project1.dir/Parameter.cpp.o.provides
+
+CMakeFiles/project1.dir/Parameter.cpp.o.provides.build: CMakeFiles/project1.dir/Parameter.cpp.o
+
+
+CMakeFiles/project1.dir/Predicate.cpp.o: CMakeFiles/project1.dir/flags.make
+CMakeFiles/project1.dir/Predicate.cpp.o: ../Predicate.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/project1.dir/Predicate.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/Predicate.cpp.o -c /tmp/tmp.LSKQsAtbMT/Predicate.cpp
+
+CMakeFiles/project1.dir/Predicate.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project1.dir/Predicate.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/tmp.LSKQsAtbMT/Predicate.cpp > CMakeFiles/project1.dir/Predicate.cpp.i
+
+CMakeFiles/project1.dir/Predicate.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project1.dir/Predicate.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/tmp.LSKQsAtbMT/Predicate.cpp -o CMakeFiles/project1.dir/Predicate.cpp.s
+
+CMakeFiles/project1.dir/Predicate.cpp.o.requires:
+
+.PHONY : CMakeFiles/project1.dir/Predicate.cpp.o.requires
+
+CMakeFiles/project1.dir/Predicate.cpp.o.provides: CMakeFiles/project1.dir/Predicate.cpp.o.requires
+	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/Predicate.cpp.o.provides.build
+.PHONY : CMakeFiles/project1.dir/Predicate.cpp.o.provides
+
+CMakeFiles/project1.dir/Predicate.cpp.o.provides.build: CMakeFiles/project1.dir/Predicate.cpp.o
+
+
+CMakeFiles/project1.dir/Rule.cpp.o: CMakeFiles/project1.dir/flags.make
+CMakeFiles/project1.dir/Rule.cpp.o: ../Rule.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/project1.dir/Rule.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project1.dir/Rule.cpp.o -c /tmp/tmp.LSKQsAtbMT/Rule.cpp
+
+CMakeFiles/project1.dir/Rule.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project1.dir/Rule.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/tmp.LSKQsAtbMT/Rule.cpp > CMakeFiles/project1.dir/Rule.cpp.i
+
+CMakeFiles/project1.dir/Rule.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project1.dir/Rule.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/tmp.LSKQsAtbMT/Rule.cpp -o CMakeFiles/project1.dir/Rule.cpp.s
+
+CMakeFiles/project1.dir/Rule.cpp.o.requires:
+
+.PHONY : CMakeFiles/project1.dir/Rule.cpp.o.requires
+
+CMakeFiles/project1.dir/Rule.cpp.o.provides: CMakeFiles/project1.dir/Rule.cpp.o.requires
+	$(MAKE) -f CMakeFiles/project1.dir/build.make CMakeFiles/project1.dir/Rule.cpp.o.provides.build
+.PHONY : CMakeFiles/project1.dir/Rule.cpp.o.provides
+
+CMakeFiles/project1.dir/Rule.cpp.o.provides.build: CMakeFiles/project1.dir/Rule.cpp.o
+
+
 # Object files for target project1
 project1_OBJECTS = \
 "CMakeFiles/project1.dir/main.cpp.o" \
@@ -358,7 +502,13 @@ project1_OBJECTS = \
 "CMakeFiles/project1.dir/StringAutomaton.cpp.o" \
 "CMakeFiles/project1.dir/BlockCommentAutomaton.cpp.o" \
 "CMakeFiles/project1.dir/IDAutomaton.cpp.o" \
-"CMakeFiles/project1.dir/UndefinedAutomata.cpp.o"
+"CMakeFiles/project1.dir/UndefinedAutomata.cpp.o" \
+"CMakeFiles/project1.dir/Parser.cpp.o" \
+"CMakeFiles/project1.dir/ParserHelper.cpp.o" \
+"CMakeFiles/project1.dir/DatalogProgram.cpp.o" \
+"CMakeFiles/project1.dir/Parameter.cpp.o" \
+"CMakeFiles/project1.dir/Predicate.cpp.o" \
+"CMakeFiles/project1.dir/Rule.cpp.o"
 
 # External object files for target project1
 project1_EXTERNAL_OBJECTS =
@@ -375,9 +525,15 @@ project1: CMakeFiles/project1.dir/StringAutomaton.cpp.o
 project1: CMakeFiles/project1.dir/BlockCommentAutomaton.cpp.o
 project1: CMakeFiles/project1.dir/IDAutomaton.cpp.o
 project1: CMakeFiles/project1.dir/UndefinedAutomata.cpp.o
+project1: CMakeFiles/project1.dir/Parser.cpp.o
+project1: CMakeFiles/project1.dir/ParserHelper.cpp.o
+project1: CMakeFiles/project1.dir/DatalogProgram.cpp.o
+project1: CMakeFiles/project1.dir/Parameter.cpp.o
+project1: CMakeFiles/project1.dir/Predicate.cpp.o
+project1: CMakeFiles/project1.dir/Rule.cpp.o
 project1: CMakeFiles/project1.dir/build.make
 project1: CMakeFiles/project1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable project1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable project1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/project1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -397,6 +553,12 @@ CMakeFiles/project1.dir/requires: CMakeFiles/project1.dir/StringAutomaton.cpp.o.
 CMakeFiles/project1.dir/requires: CMakeFiles/project1.dir/BlockCommentAutomaton.cpp.o.requires
 CMakeFiles/project1.dir/requires: CMakeFiles/project1.dir/IDAutomaton.cpp.o.requires
 CMakeFiles/project1.dir/requires: CMakeFiles/project1.dir/UndefinedAutomata.cpp.o.requires
+CMakeFiles/project1.dir/requires: CMakeFiles/project1.dir/Parser.cpp.o.requires
+CMakeFiles/project1.dir/requires: CMakeFiles/project1.dir/ParserHelper.cpp.o.requires
+CMakeFiles/project1.dir/requires: CMakeFiles/project1.dir/DatalogProgram.cpp.o.requires
+CMakeFiles/project1.dir/requires: CMakeFiles/project1.dir/Parameter.cpp.o.requires
+CMakeFiles/project1.dir/requires: CMakeFiles/project1.dir/Predicate.cpp.o.requires
+CMakeFiles/project1.dir/requires: CMakeFiles/project1.dir/Rule.cpp.o.requires
 
 .PHONY : CMakeFiles/project1.dir/requires
 

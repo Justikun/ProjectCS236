@@ -102,6 +102,12 @@
 		<Unit filename="/tmp/tmp.LSKQsAtbMT/CommentAutomaton.h">
 			<Option target="project1"/>
 		</Unit>
+		<Unit filename="/tmp/tmp.LSKQsAtbMT/DatalogProgram.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.LSKQsAtbMT/DatalogProgram.h">
+			<Option target="project1"/>
+		</Unit>
 		<Unit filename="/tmp/tmp.LSKQsAtbMT/EndOfFileAutomaton.cpp">
 			<Option target="project1"/>
 		</Unit>
@@ -130,6 +136,36 @@
 			<Option target="project1"/>
 		</Unit>
 		<Unit filename="/tmp/tmp.LSKQsAtbMT/NewLineAutomaton.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.LSKQsAtbMT/Parameter.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.LSKQsAtbMT/Parameter.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.LSKQsAtbMT/Parser.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.LSKQsAtbMT/Parser.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.LSKQsAtbMT/ParserHelper.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.LSKQsAtbMT/ParserHelper.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.LSKQsAtbMT/Predicate.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.LSKQsAtbMT/Predicate.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.LSKQsAtbMT/Rule.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.LSKQsAtbMT/Rule.h">
 			<Option target="project1"/>
 		</Unit>
 		<Unit filename="/tmp/tmp.LSKQsAtbMT/StringAutomaton.cpp">

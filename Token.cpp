@@ -25,3 +25,7 @@ std::string Token::GetInput() {
 std::string Token::GetLineNumber() {
     return std::to_string(lineNumber);
 }
+
+void Token::PrintTokenAsString() {
+    std::cout << "(" << GetTokenType() << "," << "\"" << GetInput()<< "\"," << GetLineNumber() << ")";
+}

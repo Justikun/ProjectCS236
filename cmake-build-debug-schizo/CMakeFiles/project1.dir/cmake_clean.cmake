@@ -11,6 +11,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/project1.dir/BlockCommentAutomaton.cpp.o"
   "CMakeFiles/project1.dir/IDAutomaton.cpp.o"
   "CMakeFiles/project1.dir/UndefinedAutomata.cpp.o"
+  "CMakeFiles/project1.dir/Parser.cpp.o"
+  "CMakeFiles/project1.dir/ParserHelper.cpp.o"
+  "CMakeFiles/project1.dir/DatalogProgram.cpp.o"
+  "CMakeFiles/project1.dir/Parameter.cpp.o"
+  "CMakeFiles/project1.dir/Predicate.cpp.o"
+  "CMakeFiles/project1.dir/Rule.cpp.o"
   "project1.pdb"
   "project1"
 )
