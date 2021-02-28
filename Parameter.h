@@ -4,10 +4,11 @@
 
 #ifndef PROJECT1_PARAMETER_H
 #define PROJECT1_PARAMETER_H
-
+#include <iostream>
 
 class Parameter {
-
+private:
+    std::string parameter;
 };
 
 

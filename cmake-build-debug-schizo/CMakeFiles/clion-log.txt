@@ -1,4 +1,1 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /tmp/tmp.LSKQsAtbMT
--- Configuring done
--- Generating done
--- Build files have been written to: /tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo
+CMake executable not found: /usr/bin/cmake Configure Disable profile
