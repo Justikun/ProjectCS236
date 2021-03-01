@@ -34,9 +34,34 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/Platform/UnixPaths.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/ProcessorCount.cmake"
   "../CMakeLists.txt"
+<<<<<<< HEAD
   "CMakeFiles/3.17.5/CMakeCCompiler.cmake"
   "CMakeFiles/3.17.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.17.5/CMakeSystem.cmake"
+=======
+  "CMakeFiles/3.10.2/CMakeCCompiler.cmake"
+  "CMakeFiles/3.10.2/CMakeCXXCompiler.cmake"
+  "CMakeFiles/3.10.2/CMakeSystem.cmake"
+  "/usr/share/cmake-3.10/Modules/CMakeCInformation.cmake"
+  "/usr/share/cmake-3.10/Modules/CMakeCXXInformation.cmake"
+  "/usr/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake"
+  "/usr/share/cmake-3.10/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
+  "/usr/share/cmake-3.10/Modules/CMakeFindCodeBlocks.cmake"
+  "/usr/share/cmake-3.10/Modules/CMakeGenericSystem.cmake"
+  "/usr/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake"
+  "/usr/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake"
+  "/usr/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/usr/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+  "/usr/share/cmake-3.10/Modules/Compiler/GNU-C.cmake"
+  "/usr/share/cmake-3.10/Modules/Compiler/GNU-CXX.cmake"
+  "/usr/share/cmake-3.10/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-3.10/Modules/Platform/Linux-GNU-C.cmake"
+  "/usr/share/cmake-3.10/Modules/Platform/Linux-GNU-CXX.cmake"
+  "/usr/share/cmake-3.10/Modules/Platform/Linux-GNU.cmake"
+  "/usr/share/cmake-3.10/Modules/Platform/Linux.cmake"
+  "/usr/share/cmake-3.10/Modules/Platform/UnixPaths.cmake"
+  "/usr/share/cmake-3.10/Modules/ProcessorCount.cmake"
+>>>>>>> parent of 2713c90 (project2 part one running smoothly)
   )
 
 # The corresponding makefile is:

@@ -5,11 +5,9 @@
 #ifndef PROJECT1_PREDICATE_H
 #define PROJECT1_PREDICATE_H
 
-#include <iostream>
-#include <vector>
-#include "Parameter.h"
 
 class Predicate {
+<<<<<<< HEAD
 private:
     std::string predicateName;
     std::vector<Parameter*> predicateParameters;
@@ -20,6 +18,9 @@ public:
     void AddPredicateName(std::string predicateName);
     void AddPredicateParameter(Parameter* parameter);
     std::string ToString();
+=======
+
+>>>>>>> parent of 2713c90 (project2 part one running smoothly)
 };
 
 

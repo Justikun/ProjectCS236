@@ -4,10 +4,8 @@
 
 #ifndef PROJECT1_DATALOGPROGRAM_H
 #define PROJECT1_DATALOGPROGRAM_H
-#include "Parser.h"
-#include "Predicate.h"
-#include "Rule.h"
 
+<<<<<<< HEAD
 class DatalogProgram {
 private:
     std::vector<Predicate> schemePredicates;
@@ -23,9 +21,11 @@ public:
     void AddFactPredicate(Predicate);
     void AddQueryPredicate(Predicate);
     void AddRulePredicate(Rule);
+=======
+>>>>>>> parent of 2713c90 (project2 part one running smoothly)
 
+class DatalogProgram {
 
-    std::string ToString();
 };
 
 
