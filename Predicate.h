@@ -12,10 +12,13 @@
 class Predicate {
 private:
     std::string predicateName;
-    std::vector<Parameter> predicateParameters;
+    std::vector<Parameter*> predicateParameters;
 
 public:
-    void AddPredicateName(std::string);
+    Predicate();
+    ~Predicate();
+    void AddPredicateName(std::string predicateName);
+    void AddPredicateParameter(Parameter* parameter);
     std::string ToString();
 };
 

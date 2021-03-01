@@ -19,7 +19,7 @@ public:
     DatalogProgram();
     ~DatalogProgram();
 
-    AddSchemePredicate(Predicate);
+    void AddSchemePredicate(Predicate);
     void AddFactPredicate(Predicate);
     void AddQueryPredicate(Predicate);
     void AddRulePredicate(Rule);

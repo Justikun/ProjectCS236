@@ -75,37 +75,53 @@ std::vector<Predicate> Parser::ParseSchemeList(std::vector<Token*> tokens) {
 void Parser::ParseScheme(std::vector<Token*> tokens) {
     ///Production
     ///ID LEFT_PAREN ID idList RIGHT_PAREN
+
+    //Creating a predicate with the ID name
     Predicate *predicate = new Predicate();
-    std::vector<Predicate*> schemePredicates;
-    schemePredicates.push_back(predicate);
-
+    std::vector<Predicate*> parameters;
     CheckTerminal(tokens,ID);
-    predicate->AddPredicateName(tokens.at(tokenPosition)->GetInput());
-
+    predicate->AddPredicateName(tokens.at(tokenPosition-1)->GetInput());
     CheckTerminal(tokens,LEFT_PAREN);
+
+    //Creating the first parameter of the predicate
     CheckTerminal(tokens,ID);
+    std::string parameterString = tokens.at(tokenPosition-1)->GetInput();
+    Parameter *parameter = new Parameter();
+    parameter->AddParameter(parameterString);
+
+    //Adding parameter to predicate
+    predicate->AddPredicateParameter(parameter);
 
     //checks follow-set of parseIdList
     if (tokens.at(tokenPosition)->GetTokenType() != RIGHT_PAREN) {
+        //add each token to the schemePredicate vector
         ParseIdList(tokens);
     }
 
     CheckTerminal(tokens, RIGHT_PAREN);
-
-
+    parameters.push_back(predicate);
 }
 
-void Parser::ParseIdList(std::vector<Token*> tokens) {
+Parameter* Parser::ParseIdList(std::vector<Token*> tokens) {
     ///PRODUCTION
     ///COMMA ID idList | lambda
+
+    //TODO: CONVERT THIS FUNCTION TO RETURN THE PARAMETER WHICH ADDS IT TO A SCHEME Parameter VECTOR
+    // , THEN THE VECTOR IS THEN PUSHED TO CREATE A PREDICATE OBJECT
 
     CheckTerminal(tokens,COMMA);
     CheckTerminal(tokens,ID);
 
+    Parameter *parameter = new Parameter();
+    std::string parameterString = tokens.at(tokenPosition-1)->GetInput();
+    parameter->AddParameter(parameterString);
+
     //checks follows-Set of parseIdList
     if (tokens.at(tokenPosition)->GetTokenType() != RIGHT_PAREN) {
         ParseIdList(tokens);
+        return parameter;
     }
+
 }
 
 void Parser::ParseFactList(std::vector<Token *> tokens) {
@@ -307,9 +323,4 @@ void Parser::CheckTerminal(std::vector<Token*> tokens, TokenType tokenType) {
         tokenPosition++;
     }
 }
-
-
-
-
-
 

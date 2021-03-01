@@ -4,7 +4,7 @@
 
 #include "Lexer.h"
 #include <iostream>
-#include "parser.h"
+#include "Parser.h"
 
 #include "MatcherAutomaton.h"
 #include "NewLineAutomaton.h"

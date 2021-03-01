@@ -3,3 +3,12 @@
 //
 
 #include "Parameter.h"
+
+
+Parameter::Parameter() {
+
+}
+
+void Parameter::AddParameter(std::string parameter) {
+    this->parameter = parameter;
+}

@@ -9,6 +9,10 @@
 class Parameter {
 private:
     std::string parameter;
+
+public:
+    Parameter();
+    void AddParameter(std::string parameter);
 };
 
 

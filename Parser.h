@@ -7,8 +7,9 @@
 
 #include "Token.h"
 #include "vector"
-#include "Predicate.h"
 #include "DatalogProgram.h"
+#include "Predicate.h"
+#include "Parameter.h"
 
 class Parser {
 public:
@@ -35,7 +36,7 @@ private:
     void ParsePredicateList(std::vector<Token*> tokens);
     void ParseParameterList(std::vector<Token*> tokens);
     void ParseStringList(std::vector<Token*> tokens);
-    void ParseIdList(std::vector<Token*> tokens);
+    Parameter* ParseIdList(std::vector<Token*> tokens);
 
     void ParseParameter(std::vector<Token*> tokens);
     void ParseExpression(std::vector<Token*> tokens);
