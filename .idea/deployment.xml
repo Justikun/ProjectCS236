@@ -2,10 +2,10 @@
 <project version="4">
   <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="Lab Computer (BYU) (2a4062d5-8212-40ca-94d7-3bc1a1034391)">
+      <paths name="Lab Computers (BYU) (f149080a-4e6b-4adc-a5bf-0dd54f4ee64e)">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/tmp.dMZKs5tmjE" local="$PROJECT_DIR$" />
+            <mapping deploy="/tmp/ProjectCS236" local="$PROJECT_DIR$" />
           </mappings>
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
