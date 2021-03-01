@@ -111,9 +111,9 @@ Parameter* Parser::ParseIdList(std::vector<Token*> tokens) {
 
     CheckTerminal(tokens,COMMA);
     CheckTerminal(tokens,ID);
+    std::string parameterString = tokens.at(tokenPosition-1)->GetInput();
 
     Parameter *parameter = new Parameter();
-    std::string parameterString = tokens.at(tokenPosition-1)->GetInput();
     parameter->AddParameter(parameterString);
 
     //checks follows-Set of parseIdList
