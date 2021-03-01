@@ -3,3 +3,7 @@
 //
 
 #include "Predicate.h"
+
+void Predicate::AddPredicateName(std::string predicateName) {
+    this->predicateName = predicateName;
+}

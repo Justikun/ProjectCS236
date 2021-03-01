@@ -2,6 +2,24 @@
 <project version="4">
   <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
+      <paths name="Lab Computers (BYU) (3a9aec0b-4508-444e-93ad-591d1ea3a912)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.mZaVQNlVp9" local="$PROJECT_DIR$" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-schizo" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="Lab Computers (BYU) (70387d47-f288-4dd2-bde6-d21ef0c6adc3)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="Lab Computers (BYU) (f149080a-4e6b-4adc-a5bf-0dd54f4ee64e)">
         <serverdata>
           <mappings>

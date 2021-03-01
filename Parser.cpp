@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "Parser.h"
+#include "DatalogProgram.h"
 
 Parser::Parser(){
     tokenPosition = 0;
@@ -22,6 +23,8 @@ void Parser::ParseDatalogProgram(std::vector<Token*> tokens) {
     ///PRODUCTION
     ///NOTE: SCHEMES COLON scheme schemeList FACTS COLON factList RULES COLON ruleList QUERIES COLON query queryList EOF
 
+    new DatalogProgram();
+
     CheckTerminal(tokens, SCHEMES);
     CheckTerminal(tokens,COLON);
     ParseScheme(tokens);
@@ -29,6 +32,7 @@ void Parser::ParseDatalogProgram(std::vector<Token*> tokens) {
     if (tokens.at(tokenPosition)->GetTokenType() != FACTS) {
         ParseSchemeList(tokens);
     }
+
 
     CheckTerminal(tokens, FACTS);
     CheckTerminal(tokens, COLON);
@@ -54,10 +58,11 @@ void Parser::ParseDatalogProgram(std::vector<Token*> tokens) {
     }
 
     std::cout << "Success!" << std::endl;
+    //TODO: if you are successful in checking the syntax, then cout the DatalogPorgram object.toString()
 
 }
 
-void Parser::ParseSchemeList(std::vector<Token*> tokens) {
+std::vector<Predicate> Parser::ParseSchemeList(std::vector<Token*> tokens) {
     ///PRODUCTION
     ///scheme schemeList | lambda
     ParseScheme(tokens);
@@ -65,12 +70,19 @@ void Parser::ParseSchemeList(std::vector<Token*> tokens) {
     if (tokens.at(tokenPosition)->GetTokenType() != FACTS) {
         ParseSchemeList(tokens);
     }
+
 }
 
 void Parser::ParseScheme(std::vector<Token*> tokens) {
     ///Production
     ///ID LEFT_PAREN ID idList RIGHT_PAREN
+    Predicate *predicate = new Predicate();
+    std::vector<Predicate*> schemePredicates;
+    schemePredicates.push_back(predicate);
+
     CheckTerminal(tokens,ID);
+    predicate->AddPredicateName(tokens.at(tokenPosition)->GetInput());
+
     CheckTerminal(tokens,LEFT_PAREN);
     CheckTerminal(tokens,ID);
 
@@ -80,6 +92,8 @@ void Parser::ParseScheme(std::vector<Token*> tokens) {
     }
 
     CheckTerminal(tokens, RIGHT_PAREN);
+
+
 }
 
 void Parser::ParseIdList(std::vector<Token*> tokens) {
@@ -119,6 +133,7 @@ void Parser::ParseFact(std::vector<Token *> tokens) {
     }
     CheckTerminal(tokens, RIGHT_PAREN);
     CheckTerminal(tokens, PERIOD);
+
 }
 
 void Parser::ParseStringList(std::vector<Token *> tokens) {

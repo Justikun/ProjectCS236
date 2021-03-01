@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo"/>
+				<Option working_dir="/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo"/>
+				<Option working_dir="/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project1">
-				<Option output="/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/project1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo"/>
+				<Option output="/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/project1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -44,15 +44,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 project1"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 project1"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project1/fast">
-				<Option output="/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/project1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo"/>
+				<Option output="/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/project1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -67,129 +67,129 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 project1/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 project1/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo"/>
+				<Option working_dir="/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.LSKQsAtbMT/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.mZaVQNlVp9/cmake-build-debug-schizo/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/Automaton.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/Automaton.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/Automaton.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/Automaton.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/BlockCommentAutomaton.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/BlockCommentAutomaton.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/BlockCommentAutomaton.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/BlockCommentAutomaton.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/CommentAutomaton.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/CommentAutomaton.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/CommentAutomaton.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/CommentAutomaton.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/DatalogProgram.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/DatalogProgram.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/DatalogProgram.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/DatalogProgram.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/EndOfFileAutomaton.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/EndOfFileAutomaton.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/EndOfFileAutomaton.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/EndOfFileAutomaton.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/IDAutomaton.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/IDAutomaton.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/IDAutomaton.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/IDAutomaton.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/Lexer.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/Lexer.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/Lexer.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/Lexer.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/MatcherAutomaton.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/MatcherAutomaton.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/MatcherAutomaton.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/MatcherAutomaton.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/NewLineAutomaton.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/NewLineAutomaton.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/NewLineAutomaton.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/NewLineAutomaton.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/Parameter.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/Parameter.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/Parameter.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/Parameter.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/Parser.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/Parser.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/Parser.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/Parser.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/ParserHelper.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/ParserHelper.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/ParserHelper.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/ParserHelper.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/Predicate.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/Predicate.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/Predicate.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/Predicate.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/Rule.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/Rule.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/Rule.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/Rule.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/StringAutomaton.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/StringAutomaton.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/StringAutomaton.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/StringAutomaton.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/Token.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/Token.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/Token.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/Token.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/UndefinedAutomata.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/UndefinedAutomata.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/UndefinedAutomata.h">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/UndefinedAutomata.h">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/main.cpp">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/main.cpp">
 			<Option target="project1"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.LSKQsAtbMT/CMakeLists.txt">
+		<Unit filename="/tmp/tmp.mZaVQNlVp9/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

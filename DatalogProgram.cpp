@@ -3,3 +3,14 @@
 //
 
 #include "DatalogProgram.h"
+
+DatalogProgram::DatalogProgram() {
+    this->factPredicates ={};
+    this->queryPredicates = {};
+    this->rulePredicates = {};
+    this->schemePredicates = {};
+}
+
+DatalogProgram::~DatalogProgram() {
+
+}
