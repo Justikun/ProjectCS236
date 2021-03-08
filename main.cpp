@@ -3,8 +3,9 @@
 
 #include "Lexer.h"
 #include "Parser.h"
-#include "string"
+#include "DatalogProgram.h"
 
+#include "string"
 
 int main(int argc, char* argv[]) {
 
@@ -37,6 +38,10 @@ int main(int argc, char* argv[]) {
         std::cout << std::endl;
         //std::cout << "catch: " << token->GetInput() << std::endl;
     }
+
+    DatalogProgram* datalogProgram = parser.GetDatalogProgram();
+
+    datalogProgram->ToString();
 
 
     return 0;

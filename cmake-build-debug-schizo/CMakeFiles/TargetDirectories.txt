@@ -1,3 +1,0 @@
-/Users/justikun/CLionProjects/ProjectCS236/cmake-build-debug-schizo/CMakeFiles/rebuild_cache.dir
-/Users/justikun/CLionProjects/ProjectCS236/cmake-build-debug-schizo/CMakeFiles/edit_cache.dir
-/Users/justikun/CLionProjects/ProjectCS236/cmake-build-debug-schizo/CMakeFiles/project1.dir

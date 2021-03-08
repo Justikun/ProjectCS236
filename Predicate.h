@@ -6,21 +6,20 @@
 #define PROJECT1_PREDICATE_H
 
 
+#include "Parameter.h"
+#include <iostream>
+#include <vector>
+
 class Predicate {
-<<<<<<< HEAD
 private:
     std::string predicateName;
     std::vector<Parameter*> predicateParameters;
 
 public:
     Predicate();
-    ~Predicate();
     void AddPredicateName(std::string predicateName);
     void AddPredicateParameter(Parameter* parameter);
-    std::string ToString();
-=======
-
->>>>>>> parent of 2713c90 (project2 part one running smoothly)
+    void ToString();
 };
 
 

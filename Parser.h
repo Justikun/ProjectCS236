@@ -7,20 +7,21 @@
 
 #include "Token.h"
 #include "vector"
-<<<<<<< HEAD
 #include "DatalogProgram.h"
 #include "Predicate.h"
 #include "Parameter.h"
-=======
->>>>>>> parent of 2713c90 (project2 part one running smoothly)
 
 class Parser {
 public:
     Parser();
     ~Parser();
+
     void Parse(std::vector<Token*> tokens);
+    DatalogProgram* GetDatalogProgram();
 private:
     int tokenPosition;
+    DatalogProgram* datalogProgramPointer;
+
     void ParseDatalogProgram(std::vector<Token*> tokens);
 
     void ParseSchemeList(std::vector<Token*> tokens);
@@ -33,13 +34,13 @@ private:
     void ParseRule(std::vector<Token*> tokens);
     void ParseQuery(std::vector<Token*> tokens);
 
-    void ParseHeadPredicate(std::vector<Token*> tokens);
+    void ParseHeadPredicate(std::vector<Token*> tokens, Rule* rule);
     void ParsePredicate(std::vector<Token*> tokens);
 
     void ParsePredicateList(std::vector<Token*> tokens);
     void ParseParameterList(std::vector<Token*> tokens);
-    void ParseStringList(std::vector<Token*> tokens);
-    Parameter* ParseIdList(std::vector<Token*> tokens);
+    void ParseStringList(std::vector<Token*> tokens, Predicate* predicate);
+    void ParseIdList(std::vector<Token*> tokens, Predicate* predicate);
 
     void ParseParameter(std::vector<Token*> tokens);
     void ParseExpression(std::vector<Token*> tokens);

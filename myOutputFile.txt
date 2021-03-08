@@ -71,14 +71,5 @@
 (ID,"E",10)
 (RIGHT_PAREN,")",10)
 (PERIOD,".",10)
-(QUERIES,"Queries",12)
-(COLON,":",12)
-(ID,"HasSameAddress",13)
-(LEFT_PAREN,"(",13)
-(STRING,"'Snoopy'",13)
-(COMMA,",",13)
-(ID,"Who",13)
-(RIGHT_PAREN,")",13)
-(Q_MARK,"?",13)
-(EOF,"",15)
-Total Tokens = 83
+(EOF,"",11)
+Total Tokens = 74

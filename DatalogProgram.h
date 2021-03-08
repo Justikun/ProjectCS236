@@ -5,26 +5,27 @@
 #ifndef PROJECT1_DATALOGPROGRAM_H
 #define PROJECT1_DATALOGPROGRAM_H
 
-<<<<<<< HEAD
+#include "Predicate.h"
+#include "Rule.h"
+
 class DatalogProgram {
 private:
-    std::vector<Predicate> schemePredicates;
-    std::vector<Predicate> factPredicates;
-    std::vector<Predicate> queryPredicates;
-    std::vector<Predicate> rulePredicates;
+    std::vector<Predicate*> schemePredicates;
+    std::vector<Predicate*> factPredicates;
+    std::vector<Rule*> rulePredicates;
+    std::vector<Predicate*> queryPredicates;
+
 
 public:
     DatalogProgram();
     ~DatalogProgram();
 
-    void AddSchemePredicate(Predicate);
-    void AddFactPredicate(Predicate);
-    void AddQueryPredicate(Predicate);
-    void AddRulePredicate(Rule);
-=======
->>>>>>> parent of 2713c90 (project2 part one running smoothly)
+    void AddSchemePredicate(Predicate* predicate);
+    void AddFactPredicate(Predicate* predicate);
+    void AddRulePredicate(Rule* predicate);
+    void AddQueryPredicate(Predicate* predicate);
 
-class DatalogProgram {
+    void ToString();
 
 };
 

@@ -4,19 +4,16 @@
 
 #ifndef PROJECT1_PARAMETER_H
 #define PROJECT1_PARAMETER_H
-
+#include <iostream>
 
 class Parameter {
-<<<<<<< HEAD
 private:
     std::string parameter;
 
 public:
     Parameter();
     void AddParameter(std::string parameter);
-=======
-
->>>>>>> parent of 2713c90 (project2 part one running smoothly)
+    void ToString();
 };
 
 

@@ -12,3 +12,7 @@ Parameter::Parameter() {
 void Parameter::AddParameter(std::string parameter) {
     this->parameter = parameter;
 }
+
+void Parameter::ToString() {
+    std::cout << parameter;
+}
