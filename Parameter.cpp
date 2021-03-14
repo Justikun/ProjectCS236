@@ -9,10 +9,14 @@ Parameter::Parameter() {
 
 }
 
-void Parameter::AddParameter(std::string parameter) {
-    this->parameter = parameter;
+void Parameter::SetName(std::string name) {
+    this->name = name;
 }
 
-void Parameter::ToString() {
-    std::cout << parameter;
+std::basic_string<char> Parameter::ToString() {
+    std::cout << name;
+}
+
+std::string Parameter::GetName() {
+    return name;
 }

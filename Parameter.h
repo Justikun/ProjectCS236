@@ -8,12 +8,13 @@
 
 class Parameter {
 private:
-    std::string parameter;
+    std::string name;
 
 public:
     Parameter();
-    void AddParameter(std::string parameter);
-    void ToString();
+    void SetName(std::string name);
+    std::string GetName();
+    std::basic_string<char> ToString();
 };
 
 

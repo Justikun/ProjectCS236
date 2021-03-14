@@ -17,6 +17,7 @@ public:
     Rule();
     void AddHeadPredicate(Predicate* headPredicate);
     void AddBodyPredicate(Predicate* bodyPredicate);
+
     void ToString();
 };
 

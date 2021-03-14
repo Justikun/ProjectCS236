@@ -13,42 +13,41 @@
 
 class Parser {
 public:
-    Parser();
+    Parser(std::vector<Token*> tokens);
     ~Parser();
 
-    void Parse(std::vector<Token*> tokens);
+    void Parse();
     DatalogProgram* GetDatalogProgram();
 private:
     int tokenPosition;
-    DatalogProgram* datalogProgramPointer;
+    std::vector<Token*> tokens;
+    DatalogProgram* datalogProgram;
 
-    void ParseDatalogProgram(std::vector<Token*> tokens);
+    void ParseDatalogProgram();
 
-    void ParseSchemeList(std::vector<Token*> tokens);
-    void ParseFactList(std::vector<Token*> tokens);
-    void ParseRuleList(std::vector<Token*> tokens);
-    void ParseQueryList(std::vector<Token*> tokens);
+    void ParseSchemeList();
+    void ParseFactList();
+    void ParseRuleList();
+    void ParseQueryList();
 
-    void ParseScheme(std::vector<Token*> tokens);
-    void ParseFact(std::vector<Token*> tokens);
-    void ParseRule(std::vector<Token*> tokens);
-    void ParseQuery(std::vector<Token*> tokens);
+    void ParseScheme();
+    void ParseFact();
+    void ParseRule();
+    void ParseQuery();
 
-    void ParseHeadPredicate(std::vector<Token*> tokens, Rule* rule);
-    void ParsePredicate(std::vector<Token*> tokens);
+    Predicate* ParseHeadPredicate();
+    Predicate* ParsePredicate();
 
-    void ParsePredicateList(std::vector<Token*> tokens);
-    void ParseParameterList(std::vector<Token*> tokens);
-    void ParseStringList(std::vector<Token*> tokens, Predicate* predicate);
-    void ParseIdList(std::vector<Token*> tokens, Predicate* predicate);
+    std::vector<Predicate*> ParsePredicateList(std::vector<Predicate*> predicates);
+    std::vector<Parameter*> ParseParameterList(std::vector<Parameter*> parameters);
+    Parameter* ParseStringList();
+    std::vector<Parameter*> ParseIdList(std::vector<Parameter*> parameters);
 
-    void ParseParameter(std::vector<Token*> tokens);
-    void ParseExpression(std::vector<Token*> tokens);
-    void ParseOperator(std::vector<Token*> tokens);
+    Parameter* ParseParameter();
+    Parameter* ParseExpression();
+    void ParseOperator();
 
-    void ParseMatchFail();
-
-    void CheckTerminal(std::vector<Token*> tokens, TokenType tokenType);
+    void CheckTerminal(TokenType tokenType);
 
 };
 

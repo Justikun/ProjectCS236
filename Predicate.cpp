@@ -8,7 +8,7 @@ void Predicate::AddPredicateName(std::string predicateName) {
     this->predicateName = predicateName;
 }
 
-void Predicate::AddPredicateParameter(Parameter* parameter) {
+void Predicate::AddParameter(Parameter* parameter) {
     predicateParameters.push_back(parameter);
 }
 

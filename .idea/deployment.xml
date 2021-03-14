@@ -38,6 +38,8 @@
           </mappings>
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-schizo-debug" />
             <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-schizo-debug" />
           </excludedPaths>
         </serverdata>
@@ -50,6 +52,28 @@
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
             <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-schizo-debug" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="Remote Host (a303fe1d-de22-49fc-afe1-157d353ebe77)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.8oreix20z1" local="$PROJECT_DIR$" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-schizo-debug" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="schizo (bd85c16d-c5ed-469e-b4df-757f330cb6f3)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.YPTyvpMV5H" local="$PROJECT_DIR$" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-schizo" />
           </excludedPaths>
         </serverdata>
       </paths>

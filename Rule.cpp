@@ -20,8 +20,7 @@ void Rule::ToString() {
     headPredicate->ToString();
     std::cout << ") :- ";
     std::cout << bodyPredicates.size();
-    for (int i=0; i<bodyPredicates.size();i++) {
-        std::cout << "HERE" << std::endl;
-        bodyPredicates.at(i)->ToString();
-    }
+//    for (int i=0; i<bodyPredicates.size();i++) {
+//        bodyPredicates.at(i)->ToString();
+//    }
 }

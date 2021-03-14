@@ -1,0 +1,2 @@
+In my parser object. I am constantly passing a token pointer through each function. Would it make more sense to make a private temp variabele?
+or is that bad practice?

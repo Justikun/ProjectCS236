@@ -5,10 +5,10 @@
 #include "DatalogProgram.h"
 
 DatalogProgram::DatalogProgram() {
-    schemePredicates = {};
-    factPredicates = {};
-    queryPredicates = {};
-    rulePredicates = {};
+//    schemePredicates = {};
+//    factPredicates = {};
+//    queryPredicates = {};
+//    rulePredicates = {};
 
 }
 
@@ -44,7 +44,6 @@ void DatalogProgram::ToString() {
     }
 
     ///printing Facts
-
     if (factPredicates.size() != 0) {
         std::cout << "Facts(" << factPredicates.size() << "):\n";
     }
@@ -52,7 +51,7 @@ void DatalogProgram::ToString() {
     for (int i=0;i<factPredicates.size();i++) {
         std::cout << "  ";
         factPredicates.at(i)->ToString();
-        std::cout << ")\n";
+        std::cout << ").\n";
     }
 
     ///printing Rules

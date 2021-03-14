@@ -4,6 +4,7 @@
 #include "Lexer.h"
 #include "Parser.h"
 #include "DatalogProgram.h"
+#include "Token.h"
 
 #include "string"
 
@@ -28,10 +29,10 @@ int main(int argc, char* argv[]) {
 //    lexer.printTokensSize();
     lexer.copyToOutPut();
     std::cout << std::endl;
-    Parser parser = Parser();
+    Parser parser = Parser(lexer.getTokensVector());
 
     try {
-        parser.Parse(lexer.getTokensVector());
+        parser.Parse();
     } catch (Token* token) {
         std::cout << "Failure!" << std::endl << "  ";
         token->PrintTokenAsString();
