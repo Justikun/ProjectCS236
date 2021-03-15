@@ -17,7 +17,8 @@ private:
 
 public:
     Predicate();
-    void AddPredicateName(std::string predicateName);
+    void SetPredicateName(std::string predicateName);
+    std::string GetName();
     void AddParameter(Parameter* parameter);
     void ToString();
 };

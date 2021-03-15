@@ -38,10 +38,10 @@ private:
     Predicate* ParseHeadPredicate();
     Predicate* ParsePredicate();
 
-    std::vector<Predicate*> ParsePredicateList(std::vector<Predicate*> predicates);
-    std::vector<Parameter*> ParseParameterList(std::vector<Parameter*> parameters);
-    Parameter* ParseStringList();
-    std::vector<Parameter*> ParseIdList(std::vector<Parameter*> parameters);
+    void ParsePredicateList(std::vector<Predicate*> *predicates);
+    void ParseParameterList(std::vector<Parameter*> *parameters);
+    void ParseStringList(std::vector<Parameter*> *parameters);
+    void ParseIdList(std::vector<Parameter*> *parameters);
 
     Parameter* ParseParameter();
     Parameter* ParseExpression();

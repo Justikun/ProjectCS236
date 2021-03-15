@@ -8,3 +8,5 @@ Facts:
 
 Rules:
   HasSameAddress(X,Y) :- snap(A,X,B,C),snap(D,Y,B,E).
+  HasSameAddress(X,Y) :- snap(('2'+'3')).
+

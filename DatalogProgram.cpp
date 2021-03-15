@@ -54,6 +54,8 @@ void DatalogProgram::ToString() {
         std::cout << ").\n";
     }
 
+    std::cout << "Size: " << rulePredicates.size() << std::endl;
+
     ///printing Rules
     if (rulePredicates.size() != 0) {
         std::cout << "Rule(" << rulePredicates.size() << "):\n";

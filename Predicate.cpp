@@ -4,8 +4,12 @@
 
 #include "Predicate.h"
 
-void Predicate::AddPredicateName(std::string predicateName) {
+void Predicate::SetPredicateName(std::string predicateName) {
     this->predicateName = predicateName;
+}
+
+std::string Predicate::GetName() {
+    return this->predicateName;
 }
 
 void Predicate::AddParameter(Parameter* parameter) {
@@ -20,10 +24,14 @@ void Predicate::ToString() {
     //print predicate
     std::cout << predicateName << "(";
     //prints parameters
+
     for (int i=0;i<predicateParameters.size();i++) {
-        predicateParameters.at(i)->ToString();
+        std::cout << predicateParameters.at(i)->GetName();
+
         if (predicateParameters.size() != i+1) {
             std::cout << ",";
         }
     }
+
+    std::cout << ")";
 }

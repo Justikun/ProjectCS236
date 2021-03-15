@@ -14,13 +14,17 @@ void Rule::AddHeadPredicate(Predicate *headPredicate) {
 
 void Rule::AddBodyPredicate(Predicate *bodyPredicate) {
     bodyPredicates.push_back(bodyPredicate);
+    std::cout << "SIZE: " << bodyPredicates.size() << std::endl;
 }
+
 
 void Rule::ToString() {
     headPredicate->ToString();
-    std::cout << ") :- ";
-    std::cout << bodyPredicates.size();
-//    for (int i=0; i<bodyPredicates.size();i++) {
-//        bodyPredicates.at(i)->ToString();
-//    }
+    std::cout << " :- ";
+    for (int i=0; i<bodyPredicates.size();i++) {
+        if (i>0) {
+            std::cout << ",";
+        }
+        bodyPredicates.at(i)->ToString();
+    }
 }

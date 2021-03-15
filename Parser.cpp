@@ -51,7 +51,6 @@ void Parser::ParseDatalogProgram() {
     CheckTerminal( COLON);
     tokenPosition++;
 
-
 //    checks follow-set of ruleList
     if (tokens.at(tokenPosition)->GetTokenType() != QUERIES) {
         ParseRuleList();
@@ -59,14 +58,18 @@ void Parser::ParseDatalogProgram() {
 
     std::cout << "SUCCESS" << std::endl << std::endl;
 
-//    CheckTerminal( QUERIES);
-//    CheckTerminal( COLON);
-//    ParseQuery(tokens);
-//
-//    //checks follow-set of ParseQueryList
-//    if (tokens.at(tokenPosition)->GetTokenType() != END_OF_FILE) {
-//        ParseQueryList(tokens);
-//    }
+    CheckTerminal( QUERIES);
+    tokenPosition++;
+
+    CheckTerminal( COLON);
+    tokenPosition++;
+
+    ParseQuery();
+
+    //checks follow-set of ParseQueryList
+    if (tokens.at(tokenPosition)->GetTokenType() != END_OF_FILE) {
+        ParseQueryList();
+    }
 }
 
 void Parser::ParseSchemeList() {
@@ -77,7 +80,6 @@ void Parser::ParseSchemeList() {
     if (tokens.at(tokenPosition)->GetTokenType() != FACTS) {
         ParseSchemeList();
     }
-
 }
 
 void Parser::ParseScheme() {
@@ -88,7 +90,7 @@ void Parser::ParseScheme() {
 
     CheckTerminal( ID);
     //Creating a predicate with the ID name
-    predicate->AddPredicateName(tokens.at(tokenPosition)->GetInput());
+    predicate->SetPredicateName(tokens.at(tokenPosition)->GetInput());
     tokenPosition++;
 
     CheckTerminal( LEFT_PAREN);
@@ -103,8 +105,8 @@ void Parser::ParseScheme() {
 
     //checks follow-set of parseIdList
     if (tokens.at(tokenPosition)->GetTokenType() != RIGHT_PAREN) {
-        std::vector<Parameter*> parameters; //  = new std::vector<Parameter*>();
-        parameters = ParseIdList(parameters);
+        std::vector<Parameter*> parameters;
+        ParseIdList(&parameters);
 
         for (int i=0; i<parameters.size(); i++) {
             predicate->AddParameter(parameters.at(i));
@@ -112,11 +114,12 @@ void Parser::ParseScheme() {
     }
 
     CheckTerminal( RIGHT_PAREN);
+
     datalogProgram->AddSchemePredicate(predicate);
     tokenPosition++;
 }
 
-std::vector<Parameter*> Parser::ParseIdList(std::vector<Parameter*> parameters) {
+void Parser::ParseIdList(std::vector<Parameter*> *parameters) {
     ///PRODUCTION
     ///COMMA ID idList | lambda
     Parameter *parameter = new Parameter();
@@ -127,14 +130,12 @@ std::vector<Parameter*> Parser::ParseIdList(std::vector<Parameter*> parameters) 
     CheckTerminal(ID);
     parameter->SetName(tokens.at(tokenPosition)->GetInput());
     tokenPosition++;
-    parameters.push_back(parameter);
+    parameters->push_back(parameter);
 
     //checks follows-Set of parseIdList
     if (tokens.at(tokenPosition)->GetTokenType() != RIGHT_PAREN) {
-        return ParseIdList(parameters);
+        ParseIdList(parameters);
     }
-
-    return parameters;
 }
 
 void Parser::ParseFactList() {
@@ -154,10 +155,12 @@ void Parser::ParseFact() {
     Predicate* predicate = new Predicate();
 
     CheckTerminal( ID);
-    predicate->AddPredicateName(tokens.at(tokenPosition)->GetInput());
+    predicate->SetPredicateName(tokens.at(tokenPosition)->GetInput());
     tokenPosition++;
+
     CheckTerminal( LEFT_PAREN);
     tokenPosition++;
+
     CheckTerminal( STRING);
     Parameter* parameter = new Parameter();
     parameter->SetName(tokens.at(tokenPosition)->GetInput());
@@ -166,9 +169,12 @@ void Parser::ParseFact() {
 
     //checks follow-set of ParseStringList
     if (tokens.at(tokenPosition)->GetTokenType() != RIGHT_PAREN) {
-        ParseStringList();
-        //assigns parameters to the overarching predicate
-     //   predicate->AddParameter(ParseIdList());
+        std::vector<Parameter*> parameters;
+        ParseStringList(&parameters);
+
+        for (int i=0; i<parameters.size(); i++) {
+            predicate->AddParameter(parameters.at(i));
+        }
     }
 
     CheckTerminal( RIGHT_PAREN);
@@ -179,22 +185,24 @@ void Parser::ParseFact() {
     datalogProgram->AddFactPredicate(predicate);
 }
 
-Parameter* Parser::ParseStringList() {
+void Parser::ParseStringList(std::vector<Parameter*> *parameters) {
     ///PRODUCTION
     ///COMMA STRING stringList | lambda
 
     CheckTerminal( COMMA);
     tokenPosition++;
+
     CheckTerminal( STRING);
     Parameter* parameter = new Parameter();
     parameter->SetName(tokens.at(tokenPosition)->GetInput());
     tokenPosition++;
 
+    parameters->push_back(parameter);
+
     //checks follow-set of ParseStringList
     if (tokens.at(tokenPosition)->GetTokenType() != RIGHT_PAREN) {
-        ParseStringList();
+        ParseStringList(parameters);
     }
-    return parameter;
 }
 
 void Parser::ParseRule() {
@@ -207,27 +215,23 @@ void Parser::ParseRule() {
         rule->AddHeadPredicate(ParseHeadPredicate());
     }
 
+    rule->ToString();
+
     CheckTerminal( COLON_DASH);
     tokenPosition++;
 
     //adds the first predicate to body predicates for our rule object
     rule->AddBodyPredicate(ParsePredicate());
 
-    //checks follow-set of predicate
-//    if (tokens.at(tokenPosition)->GetTokenType() != PERIOD) {
-//        std::vector<Predicate*> predicates; //  = new std::vector<Parameter*>();
-//        predicates = ParsePredicate(predicates);
-//
-//        for (int i=0; i<predicates.size(); i++) {
-//            rule->AddBodyPredicate(predicates.at(i));
-//        }
-//    }
+//    checks follow-set of predicate
+    if (tokens.at(tokenPosition)->GetTokenType() != PERIOD) {
+        std::vector<Predicate*> predicates;
+        ParsePredicateList(&predicates);
 
-//    rule->AddBodyPredicate(ParsePredicate());
-//
-//    if (tokens.at(tokenPosition)->GetTokenType() != PERIOD) {
-//        ParsePredicateList();
-//    }
+        for (int i=0; i<predicates.size(); i++) {
+            rule->AddBodyPredicate(predicates.at(i));
+        }
+    }
 
     CheckTerminal( PERIOD);
     tokenPosition++;
@@ -237,10 +241,11 @@ void Parser::ParseRule() {
 void Parser::ParseRuleList() {
     ///PRODUCTION
     ///rule ruleList | lambda
+    ParseRule();
 
     //checks follow-set for ParseRuleList
     if (tokens.at(tokenPosition)->GetTokenType() != QUERIES) {
-        ParseRule();
+        ParseRuleList();
     }
 }
 
@@ -252,7 +257,7 @@ Predicate* Parser::ParseHeadPredicate() {
 
     // Check for ID and add
     CheckTerminal( ID);
-    headPredicate->AddPredicateName(tokens.at(tokenPosition)->GetInput());
+    headPredicate->SetPredicateName(tokens.at(tokenPosition)->GetInput());
     tokenPosition++;
 
     // Check for left paren and skip
@@ -269,7 +274,7 @@ Predicate* Parser::ParseHeadPredicate() {
     // Checks follow-set for idList
     if (tokens.at(tokenPosition)->GetTokenType() != RIGHT_PAREN) {
         std::vector<Parameter*> parameters;
-        parameters = ParseIdList(parameters);
+        ParseIdList(&parameters);
 
         for (int i=0; i<parameters.size(); i++) {
             headPredicate->AddParameter(parameters.at(i));
@@ -282,19 +287,18 @@ Predicate* Parser::ParseHeadPredicate() {
     return headPredicate;
 }
 
-std::vector<Parameter*> Parser::ParseParameterList(std::vector<Parameter*> parameters) {
+void Parser::ParseParameterList(std::vector<Parameter*> *parameters) {
     ///PRODUCTION
     ///COMMA parameter parameterList | lambda
+    CheckTerminal( COMMA);
+    tokenPosition++;
 
-    parameters.push_back(ParseParameter());
-
+    parameters->push_back(ParseParameter());
 
     //checks follows-Set of ParseParameterList();
     if (tokens.at(tokenPosition)->GetTokenType() != RIGHT_PAREN) {
-        return ParseParameterList(parameters);
+        ParseParameterList(parameters);
     }
-
-    return parameters;
 }
 
 Predicate* Parser::ParsePredicate() {
@@ -303,18 +307,17 @@ Predicate* Parser::ParsePredicate() {
     Predicate* predicate = new Predicate();
 
     CheckTerminal( ID);
-    predicate->AddPredicateName(tokens.at(tokenPosition)->GetInput());
+    predicate->SetPredicateName(tokens.at(tokenPosition)->GetInput());
     tokenPosition++;
+
     CheckTerminal( LEFT_PAREN);
     tokenPosition++;
 
     predicate->AddParameter(ParseParameter());
 
-    //todo: add ParseParameterList here
-
     if (tokens.at(tokenPosition)->GetTokenType() != RIGHT_PAREN) {
         std::vector<Parameter*> parameters;
-        parameters = ParseParameterList(parameters);
+        ParseParameterList(&parameters);
 
         for (int i=0; i<parameters.size(); i++) {
             predicate->AddParameter(parameters.at(i));
@@ -332,6 +335,7 @@ Parameter* Parser::ParseParameter() {
     ///STRING | ID | expression
     Parameter* parameter = new Parameter;
 
+//     std::cout << "Here 1" << tokens.at(tokenPosition)->GetInput() << std::endl;
     if (tokens.at(tokenPosition)->GetTokenType() == STRING) {
         tokenPosition++;
         parameter->SetName(tokens.at(tokenPosition-1)->GetInput());
@@ -348,6 +352,7 @@ Parameter* Parser::ParseParameter() {
 }
 
 Parameter* Parser::ParseExpression() {
+    Parameter* parameter = new Parameter();
     ///PRODUCTION
     ///Left_Paren name operator name RIGHT_PAREN
     std::string expression;
@@ -357,7 +362,12 @@ Parameter* Parser::ParseExpression() {
     expression.append(tokens.at(tokenPosition)->GetInput());
     tokenPosition++;
 
-    //temp = ParseParameter();
+    Parameter* leftParm = ParseParameter();
+
+
+    ParseOperator();
+    expression.append(tokens.at(tokenPosition)->GetInput());
+    tokenPosition++;
 
     expression.append(temp);
 
@@ -381,29 +391,29 @@ void Parser::ParseOperator() {
     /// ADD | MULTIPLY
 
     if (tokens.at(tokenPosition)->GetTokenType() == ADD) {
-        tokenPosition++;
+        //tokenPosition++;
         //return tokens.at(tokenPosition-1)->GetInput();
     } else if (tokens.at(tokenPosition)->GetTokenType() == MULTIPLY){
-        tokenPosition++;
+        //tokenPosition++;
         //return tokens.at(tokenPosition-1)->GetInput();
     } else {
         throw tokens.at(tokenPosition);
     }
 }
 
-std::vector<Predicate*> Parser::ParsePredicateList(std::vector<Predicate*> predicates) {
+void Parser::ParsePredicateList(std::vector<Predicate*> *predicates) {
     ///PRODUCTION
     ///COMMA predicate predicateList | lambda
 
     CheckTerminal( COMMA);
     tokenPosition++;
-    Predicate* predicate = ParsePredicate();
+
+    predicates->push_back(ParsePredicate());
 
     //checks follow-set of predicateList
     if (tokens.at(tokenPosition)->GetTokenType() != PERIOD) {
-        //return ParsePredicateList();
+        ParsePredicateList(predicates);
     }
-    //return predicate;
 }
 
 void Parser::ParseQuery() {
@@ -415,6 +425,7 @@ void Parser::ParseQuery() {
         ParsePredicate();
     }
     CheckTerminal(Q_MARK);
+    tokenPosition++;
 }
 
 void Parser::ParseQueryList() {
