@@ -6,7 +6,7 @@
 #define PROJECT1_PREDICATE_H
 
 
-#include "Parameter.h"
+#include "PlainParameter.h"
 #include <iostream>
 #include <vector>
 
@@ -21,6 +21,7 @@ public:
     std::string GetName();
     void AddParameter(Parameter* parameter);
     void ToString();
+    std::vector<Parameter*> GetParameters();
 };
 
 

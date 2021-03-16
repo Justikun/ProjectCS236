@@ -1,5 +1,5 @@
 //
-// Created by justi on 2/25/2021.
+// Created by Justin on 3/15/2021.
 //
 
 #ifndef PROJECT1_PARAMETER_H
@@ -7,14 +7,10 @@
 #include <iostream>
 
 class Parameter {
-private:
-    std::string name;
+protected:
 
 public:
-    Parameter();
-    void SetName(std::string name);
-    std::string GetName();
-    std::basic_string<char> ToString();
+    virtual std::basic_string<char> ToString() = 0;
 };
 
 

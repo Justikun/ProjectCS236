@@ -14,7 +14,6 @@ void Rule::AddHeadPredicate(Predicate *headPredicate) {
 
 void Rule::AddBodyPredicate(Predicate *bodyPredicate) {
     bodyPredicates.push_back(bodyPredicate);
-    std::cout << "SIZE: " << bodyPredicates.size() << std::endl;
 }
 
 

@@ -26,7 +26,7 @@ void Predicate::ToString() {
     //prints parameters
 
     for (int i=0;i<predicateParameters.size();i++) {
-        std::cout << predicateParameters.at(i)->GetName();
+        std::cout << predicateParameters.at(i)->ToString();
 
         if (predicateParameters.size() != i+1) {
             std::cout << ",";
@@ -34,4 +34,8 @@ void Predicate::ToString() {
     }
 
     std::cout << ")";
+}
+
+std::vector<Parameter *> Predicate::GetParameters() {
+    return predicateParameters;
 }

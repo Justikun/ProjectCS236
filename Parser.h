@@ -9,7 +9,7 @@
 #include "vector"
 #include "DatalogProgram.h"
 #include "Predicate.h"
-#include "Parameter.h"
+#include "PlainParameter.h"
 
 class Parser {
 public:
@@ -40,8 +40,8 @@ private:
 
     void ParsePredicateList(std::vector<Predicate*> *predicates);
     void ParseParameterList(std::vector<Parameter*> *parameters);
-    void ParseStringList(std::vector<Parameter*> *parameters);
-    void ParseIdList(std::vector<Parameter*> *parameters);
+    void ParseStringList(std::vector<PlainParameter*> *parameters);
+    void ParseIdList(std::vector<PlainParameter*> *parameters);
 
     Parameter* ParseParameter();
     Parameter* ParseExpression();
