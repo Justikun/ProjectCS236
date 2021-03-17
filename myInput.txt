@@ -49,7 +49,7 @@ Rules:
    Students(C,R,N,G) :- snap(S,N,A,P),csg(C,S,G),cr(C,R).
 
 Queries:
-   snap(Id,'Snoopy',A,P)?
+   snap(Id,'Snoopy',Id,P)?
    csg(Course,'33333',Grade)?
    cp(Course,'CS100')?
    cdh('EE200',Day,Hour)?

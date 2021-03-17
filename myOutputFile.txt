@@ -498,7 +498,7 @@
 (COMMA,",",52)
 (STRING,"'Snoopy'",52)
 (COMMA,",",52)
-(ID,"A",52)
+(ID,"Id",52)
 (COMMA,",",52)
 (ID,"P",52)
 (RIGHT_PAREN,")",52)

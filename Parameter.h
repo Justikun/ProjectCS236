@@ -8,9 +8,11 @@
 
 class Parameter {
 protected:
+    bool constant;
 
 public:
-    virtual std::basic_string<char> ToString() = 0;
+    virtual std::string ToString() = 0;
+    bool IsConstant();
 };
 
 

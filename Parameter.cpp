@@ -3,3 +3,7 @@
 //
 
 #include "Parameter.h"
+
+bool Parameter::IsConstant() {
+    return constant;
+}

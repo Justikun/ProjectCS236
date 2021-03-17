@@ -99,7 +99,7 @@ void Parser::ParseScheme() {
     //Creating the first name of the predicate
     CheckTerminal( ID);
     PlainParameter* parameter = new PlainParameter();
-    parameter->SetValue(tokens.at(tokenPosition)->GetInput());
+    parameter->SetValue(tokens.at(tokenPosition)->GetInput(), false);
     predicate->AddParameter(parameter);
     tokenPosition++;
 
@@ -128,7 +128,7 @@ void Parser::ParseIdList(std::vector<PlainParameter*> *parameters) {
 
     // Check for ID and add
     CheckTerminal(ID);
-    parameter->SetValue(tokens.at(tokenPosition)->GetInput());
+    parameter->SetValue(tokens.at(tokenPosition)->GetInput(), false);
     tokenPosition++;
     parameters->push_back(parameter);
 
@@ -163,7 +163,7 @@ void Parser::ParseFact() {
 
     CheckTerminal( STRING);
     PlainParameter* parameter = new PlainParameter();
-    parameter->SetValue(tokens.at(tokenPosition)->GetInput());
+    parameter->SetValue(tokens.at(tokenPosition)->GetInput(), true);
     tokenPosition++;
     predicate->AddParameter(parameter);
 
@@ -195,7 +195,7 @@ void Parser::ParseStringList(std::vector<PlainParameter*> *parameters) {
 
     CheckTerminal( STRING);
     PlainParameter* parameter = new PlainParameter();
-    parameter->SetValue(tokens.at(tokenPosition)->GetInput());
+    parameter->SetValue(tokens.at(tokenPosition)->GetInput(), true);
     tokenPosition++;
 
     parameters->push_back(parameter);
@@ -266,7 +266,7 @@ Predicate* Parser::ParseHeadPredicate() {
     // Check for parameter ID and add
     CheckTerminal( ID);
     PlainParameter* parameter = new PlainParameter();
-    parameter->SetValue(tokens.at(tokenPosition)->GetInput());
+    parameter->SetValue(tokens.at(tokenPosition)->GetInput(), false);
     headPredicate->AddParameter(parameter);
     tokenPosition++;
 
@@ -337,11 +337,11 @@ Parameter* Parser::ParseParameter() {
 
     if (tokens.at(tokenPosition)->GetTokenType() == STRING) {
         tokenPosition++;
-        parameter->SetValue(tokens.at(tokenPosition-1)->GetInput());
+        parameter->SetValue(tokens.at(tokenPosition-1)->GetInput(), true);
         return parameter;
     } else if (tokens.at(tokenPosition)->GetTokenType() == ID) {
         tokenPosition++;
-        parameter->SetValue(tokens.at(tokenPosition-1)->GetInput());
+        parameter->SetValue(tokens.at(tokenPosition-1)->GetInput(), false);
         return parameter;
     } else if (tokens.at(tokenPosition)->GetTokenType() == LEFT_PAREN) {
         return ParseExpression();

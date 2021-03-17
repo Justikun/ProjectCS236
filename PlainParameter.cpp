@@ -4,11 +4,12 @@
 
 #include "PlainParameter.h"
 
-std::basic_string<char> PlainParameter::ToString() {
+std::string PlainParameter::ToString() {
     return value;
 }
 
-void PlainParameter::SetValue(std::string value) {
+void PlainParameter::SetValue(std::string value, bool constant) {
  this->value = value;
+ this->constant = constant;
 }
 

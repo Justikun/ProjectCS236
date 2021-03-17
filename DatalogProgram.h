@@ -26,6 +26,12 @@ public:
     void AddQueryPredicate(Predicate* predicate);
     void AddDomain(Predicate* predicate);
 
+    //Get methods
+    std::vector<Predicate*> GetSchemePredicates();
+    std::vector<Predicate*> GetFactPredicates();
+    std::vector<Predicate*> GetQueryPredicates();
+
+
     void ToString();
 
 };

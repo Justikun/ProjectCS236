@@ -5,10 +5,6 @@
 #include "DatalogProgram.h"
 
 DatalogProgram::DatalogProgram() {
-//    schemePredicates = {};
-//    factPredicates = {};
-//    queryPredicates = {};
-//    rulePredicates = {};
 
 }
 
@@ -97,5 +93,17 @@ void DatalogProgram::AddDomain(Predicate *predicate) {
         domains.insert(parameters.at(i)->ToString());
     }
 
+}
+
+std::vector<Predicate *> DatalogProgram::GetSchemePredicates() {
+    return schemePredicates;
+}
+
+std::vector<Predicate *> DatalogProgram::GetFactPredicates() {
+    return factPredicates;
+}
+
+std::vector<Predicate *> DatalogProgram::GetQueryPredicates() {
+    return queryPredicates;
 }
 

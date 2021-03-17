@@ -11,7 +11,7 @@ class PlainParameter: public Parameter {
 private:
     std::string value;
 public:
-    void SetValue(std::string value);
+    void SetValue(std::string value,bool constant);
     std::basic_string<char> ToString() override;
 };
 

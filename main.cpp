@@ -7,7 +7,8 @@
 #include "Token.h"
 
 #include "string"
-
+#include "Database.h"
+#include "Interpreter.h"
 int main(int argc, char* argv[]) {
 
     //reads file input
@@ -41,8 +42,10 @@ int main(int argc, char* argv[]) {
     }
 
     DatalogProgram* datalogProgram = parser.GetDatalogProgram();
+    Database* database = new Database();
+    Interpreter* interpreter = new Interpreter(datalogProgram, database);
 
-    datalogProgram->ToString();
+//    datalogProgram->ToString();
 
 
     return 0;
