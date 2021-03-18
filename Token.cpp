@@ -14,7 +14,7 @@ Token::~Token() {
 
 }
 
-TokenType Token::GetTokenType() {
+TokenType Token::GetTokenTypeNumber() {
     return type;
 }
 
@@ -27,5 +27,34 @@ std::string Token::GetLineNumber() {
 }
 
 void Token::PrintTokenAsString() {
-    std::cout << "(" << GetTokenType() << "," << "\"" << GetInput()<< "\"," << GetLineNumber() << ")";
+    std::cout << "(" << GetTokenTypeNumber() << "," << "\"" << GetInput() << "\"," << GetLineNumber() << ")";
+}
+
+std::string Token::GetTokenTypeName() {
+    std::map<TokenType,std::string> tokenTypeMap
+            {
+                    {COMMA,"COMMA"},
+                    {PERIOD,"PERIOD"},
+                    {Q_MARK,"Q_MARK"},
+                    {LEFT_PAREN, "LEFT_PAREN"},
+                    {RIGHT_PAREN, "RIGHT_PAREN"},
+                    {COLON, "COLON"},
+                    {COLON_DASH, "COLON_DASH"},
+                    {MULTIPLY, "MULTIPLY"},
+                    {ADD, "ADD"},
+                    {SCHEMES, "SCHEMES"},
+                    {FACTS, "FACTS"},
+                    {RULES, "RULES"},
+                    {QUERIES, "QUERIES"},
+                    {NEW_LINE, "\n"},
+                    {COMMENT, "COMMENT"},
+                    {END_OF_FILE, "EOF"},
+                    {STRING, "STRING"},
+                    {ID, "ID"},
+                    {UNDEFINED, "UNDEFINED"}
+            };
+
+    std::string tokenName = tokenTypeMap.at(type);
+
+    return tokenName;
 }

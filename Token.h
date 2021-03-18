@@ -21,7 +21,9 @@ class Token {
     public:
         Token(TokenType type, std::string input, int lineNumber);
         ~Token();
-        TokenType GetTokenType();
+        TokenType GetTokenTypeNumber();
+
+        std::string GetTokenTypeName();
         std::string GetInput();
         std::string GetLineNumber();
         void PrintTokenAsString();

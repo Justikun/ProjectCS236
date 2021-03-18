@@ -43,7 +43,7 @@ string Relation::GetOutput(Predicate *queryPredicate) {
     std::ostringstream text;
 
     text << predicateName << "(";
-    for (int i=0;i<predicateParameters.size();i++) {
+    for (unsigned int i=0;i<predicateParameters.size();i++) {
         text << predicateParameters.at(i)->ToString();
         if (predicateParameters.size() != i+1) {
             text << ",";
@@ -58,6 +58,31 @@ string Relation::GetOutput(Predicate *queryPredicate) {
     else {
         text << " No";
     }
+    text << "\n";
+
+    vector<string> headerNames = header->GetHeaderNames();
+
+    for(Tuple tuple : tuples) {
+        for(size_t i=0;i<headerNames.size();i++) {
+            if (i==0) {
+                text << "  ";
+            }
+            text << headerNames.at(i) << "=" << tuple.GetValue(i);
+            if (i<headerNames.size()-1) {
+                text << ", ";
+            }
+        }
+        if (headerNames.size() > 0) {
+            text << endl;
+        }
+    }
+
 
     return text.str();
+}
+
+void Relation::AddTuples(std::set<Tuple> tuples) {
+    for (Tuple tuple: tuples) {
+        AddTuple(tuple);
+    }
 }

@@ -68,9 +68,9 @@ void Lexer::Run(std::string& inputString) {
         if (maxRead > 0) {
             //creates new token
             Token *newToken = maxAutomaton->CreateToken(inputString.substr(0, maxRead), lineNumber);
-            if (newToken->GetTokenType() == COMMENT) {
+            if (newToken->GetTokenTypeNumber() == COMMENT) {
                 //don't pushback newToken
-            } else if (newToken->GetTokenType() != NEW_LINE) {
+            } else if (newToken->GetTokenTypeNumber() != NEW_LINE) {
                 //adds token to out tokens vector
                 tokens.push_back(newToken);
                 lineNumber += maxAutomaton->NewLinesRead();
@@ -118,7 +118,7 @@ void Lexer::printTokens() {
             };
 
     for(size_t i=0;i<tokens.size();i++) {
-        std::cout << "(" << tokenTypeMap.at(tokens.at(i)->GetTokenType()) << ",\"" << tokens.at(i)->GetInput() << "\"," << tokens.at(i)->GetLineNumber() << ")";
+        std::cout << "(" << tokenTypeMap.at(tokens.at(i)->GetTokenTypeNumber()) << ",\"" << tokens.at(i)->GetInput() << "\"," << tokens.at(i)->GetLineNumber() << ")";
         if (i < tokens.size()) {
             std::cout << '\n';
         }
@@ -158,7 +158,7 @@ void Lexer::copyToOutPut() {
         std::cout << "ERROR opening file" << std::endl;
     } else {
         for(size_t i=0;i<tokens.size();i++) {
-            myfile << "(" << tokenTypeMap.at(tokens.at(i)->GetTokenType()) << ",\"" << tokens.at(i)->GetInput() << "\"," << tokens.at(i)->GetLineNumber() << ")";
+            myfile << "(" << tokenTypeMap.at(tokens.at(i)->GetTokenTypeNumber()) << ",\"" << tokens.at(i)->GetInput() << "\"," << tokens.at(i)->GetLineNumber() << ")";
             if (i < tokens.size()) {
                 myfile << '\n';
             }

@@ -13,6 +13,7 @@ private:
 public:
     Header(std::vector<std::string> headerNames);
     std::string ToString();
+    std::vector<std::string> GetHeaderNames();
     Header* copy();
 };
 

@@ -25,7 +25,7 @@ void Predicate::ToString() {
     std::cout << predicateName << "(";
     //prints parameters
 
-    for (int i=0;i<predicateParameters.size();i++) {
+    for (unsigned int i=0;i<predicateParameters.size();i++) {
         std::cout << predicateParameters.at(i)->ToString();
 
         if (predicateParameters.size() != i+1) {

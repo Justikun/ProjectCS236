@@ -33,29 +33,28 @@ void DatalogProgram::AddQueryPredicate(Predicate *predicate) {
 void DatalogProgram::ToString() {
     ///printing Schemes
     std::cout << "Schemes(" << schemePredicates.size() << "):\n";
-    for (int i=0;i<schemePredicates.size();i++) {
+    for (unsigned int i=0;i<schemePredicates.size();i++) {
         std::cout << "  ";
         schemePredicates.at(i)->ToString();
         std::cout << "\n";
     }
 
     ///printing Facts
-    if (factPredicates.size() != 0) {
-        std::cout << "Facts(" << factPredicates.size() << "):\n";
-    }
+    std::cout << "Facts(" << factPredicates.size() << "):\n";
 
-    for (int i=0;i<factPredicates.size();i++) {
+
+    for (unsigned int i=0;i<factPredicates.size();i++) {
         std::cout << "  ";
         factPredicates.at(i)->ToString();
         std::cout << ".\n";
     }
 
     ///printing Rules
-    if (rulePredicates.size() != 0) {
-        std::cout << "Rules(" << rulePredicates.size() << "):\n";
-    }
 
-    for (int i=0;i<rulePredicates.size();i++) {
+    std::cout << "Rules(" << rulePredicates.size() << "):\n";
+
+
+    for (unsigned int i=0;i<rulePredicates.size();i++) {
         std::cout << "  ";
         rulePredicates.at(i)->ToString();
         std::cout << "." << std::endl;
@@ -67,7 +66,7 @@ void DatalogProgram::ToString() {
         std::cout << "Queries(" << queryPredicates.size() << "):\n";
     }
 
-    for (int i=0;i<queryPredicates.size();i++) {
+    for (unsigned int i=0;i<queryPredicates.size();i++) {
         std::cout << "  ";
         queryPredicates.at(i)->ToString();
         std::cout << "?" << std::endl;
@@ -75,9 +74,8 @@ void DatalogProgram::ToString() {
     }
 
     ///printing domain
-    if (domains.size() !=0) {
-        std::cout << "Domains(" << domains.size() << "):\n";
-    }
+    std::cout << "Domain(" << domains.size() << "):\n";
+
 
     for (auto it: domains) {
         std::cout << "  ";
@@ -89,7 +87,7 @@ void DatalogProgram::ToString() {
 void DatalogProgram::AddDomain(Predicate *predicate) {
     std::vector<Parameter*> parameters = predicate->GetParameters();
 
-    for (int i=0;i<parameters.size();i++) {
+    for (unsigned int i=0;i<parameters.size();i++) {
         domains.insert(parameters.at(i)->ToString());
     }
 

@@ -9,7 +9,6 @@
 Interpreter::Interpreter(DatalogProgram *datalogProgram, Database *database) {
     this->datalogProgram = datalogProgram;
     this->database = database;
-    Run();
 }
 
 void Interpreter::Run() {
@@ -22,20 +21,23 @@ Relation *Interpreter::EvaluatePredicate(Predicate *queryPredicate) {
     string name = queryPredicate->GetName();
     Relation* relation = relationMap.at(name);
 
-    Header* header = relation->GetHeader();
-
-    Relation* resultRelation = new Relation(name, header->copy());
     vector<Parameter*> parameters = queryPredicate->GetParameters();
     map<std::string,int> selectMap;
     vector<int> projectIndices;
     vector<string> renameIds;
 
     // All the tuples in the existing table
-    std::set<Tuple> tuples = relation->GetTuples();
+    std::set<Tuple> origTuples = relation->GetTuples();
+    std::set<Tuple> tuples;
+
+    // Copy the original tuples
+    for(Tuple tuple : origTuples) {
+        tuples.insert(tuple.copy());
+    }
 
     // Go through each query parameter
-    for (int i=0; i<parameters.size(); i++) {
-        Parameter* parameter = parameters.at(i);
+    for (unsigned int index = 0; index < parameters.size(); index++) {
+        Parameter* parameter = parameters.at(index);
         string paramValue = parameter->ToString();
 
         if (parameter->IsConstant()) {
@@ -43,15 +45,17 @@ Relation *Interpreter::EvaluatePredicate(Predicate *queryPredicate) {
             // Do select (type 1)
             // Look for match for value in this column
             //------------------------------------------
+            std::set<Tuple> tempTuples;
+
             for(Tuple tuple : tuples) {
-                if (paramValue == tuple.GetValue(i)) {
-                    // Have a match. Add the tuple.
-                    resultRelation->AddTuple(tuple.copy());
+                if (paramValue == tuple.GetValue(index)) {
+                    // Have a match.
+                    //inserting tuple
+                    tempTuples.insert(tuple);
                 }
             }
 
-            // New set of tuples. We've narrowed it down to a smaller set.
-            tuples = resultRelation->GetTuples();
+            tuples = tempTuples;
         } else {
             //have we seen this variable before?
             map<string, int>::iterator it;
@@ -59,27 +63,42 @@ Relation *Interpreter::EvaluatePredicate(Predicate *queryPredicate) {
 
             if (it != selectMap.end()) {
                 //Do a select (type 2)
-                cout << "Doing select type 2\n";
-                // TODO: Narrow down our selection on columns that have the same values
+                std::set<Tuple> tempTuples;
+                int firstMatchIndex = selectMap[paramValue];
+                for (Tuple tuple : tuples) {
+                    if (tuple.GetValue(firstMatchIndex) == tuple.GetValue(index)) {
+                        tempTuples.insert(tuple);
+                    }
+                }
+
+                tuples = tempTuples;
             } else {
+
 //                //Mark it to keep for the project and rename
-                cout << "Inserting paramValue: " << paramValue << " at index " << i << "\n";
-
-                selectMap.insert(pair<string, int>(paramValue,i));
-                projectIndices.push_back(i);
+                selectMap.insert(pair<string, int>(paramValue, index));
+                projectIndices.push_back(index);
                 renameIds.push_back(paramValue);
-
             }
         }
-
-        // TODO: Rename columns
-        // TODO: Project columns
-        // TODO: Update GetOutpout in Relation to output the tuples
     }
 
-   cout << resultRelation->GetOutput(queryPredicate) << endl;
+    //narrowing down the columns
+    set<Tuple> resultTuples;
+    for(Tuple tuple: tuples) {
+        Tuple resultTuple = Tuple();
+        vector<string> resultValues;
+        for (size_t i=0;i<projectIndices.size();i++) {
+            resultValues.push_back(tuple.GetValue(projectIndices.at(i)));
+        }
+        resultTuple.setValues(resultValues);
+        resultTuples.insert(resultTuple);
+    }
 
-    return relation;
+    Header* resultHeader = new Header(renameIds);
+    Relation* resultRelation = new Relation(name, resultHeader);
+
+    resultRelation->AddTuples(resultTuples);
+    return resultRelation;
 }
 
 void Interpreter::LoadSchemes() {
@@ -95,15 +114,6 @@ void Interpreter::LoadSchemes() {
         Relation* relation = new Relation(scheme->GetName(),header);
         relationMap.insert(std::pair<std::string,Relation*>(scheme->GetName(),relation));
     }
-
-    //    auto iter = relationMap.begin();
-//    while(iter!= relationMap.end()) {
-//        Relation* relation = (Relation*) iter->second;
-//        cout << "[" << iter->first << ","
-//             << relation->ToString() << "]\n";
-//        ++iter;
-//    }
-
 }
 
 void Interpreter::LoadFacts() {
@@ -121,12 +131,6 @@ void Interpreter::LoadFacts() {
         Relation* relation = relationMap.at(name);
         relation->AddTuple(tuple);
     }
-
-
-//
-//    Relation* relation = relationMap.at("snap");
-//    cout << relation->ToString() << endl;
-
 }
 
 void Interpreter::RunQueries() {
@@ -134,6 +138,7 @@ void Interpreter::RunQueries() {
 
     for(Predicate* query : queryPredicates) {
         Relation* relation = EvaluatePredicate(query);
+        cout << relation->GetOutput(query);
     }
 }
 

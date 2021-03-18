@@ -20,7 +20,7 @@ void Rule::AddBodyPredicate(Predicate *bodyPredicate) {
 void Rule::ToString() {
     headPredicate->ToString();
     std::cout << " :- ";
-    for (int i=0; i<bodyPredicates.size();i++) {
+    for (unsigned int i=0; i<bodyPredicates.size();i++) {
         if (i>0) {
             std::cout << ",";
         }

@@ -29,23 +29,21 @@ int main(int argc, char* argv[]) {
 //    lexer.printTokens();
 //    lexer.printTokensSize();
     lexer.copyToOutPut();
-    std::cout << std::endl;
     Parser parser = Parser(lexer.getTokensVector());
 
     try {
         parser.Parse();
+
+        DatalogProgram* datalogProgram = parser.GetDatalogProgram();
+        //datalogProgram->ToString();
+
+        Database* database = new Database();
+        Interpreter* interpreter = new Interpreter(datalogProgram, database);
+        interpreter->Run();
     } catch (Token* token) {
         std::cout << "Failure!" << std::endl << "  ";
-        token->PrintTokenAsString();
-        std::cout << std::endl;
-        //std::cout << "catch: " << token->GetInput() << std::endl;
+        std::cout << "(" << token->GetTokenTypeName() << ",\"" << token->GetInput() << "\"," << token->GetLineNumber() << ")" << std::endl;
     }
-
-    DatalogProgram* datalogProgram = parser.GetDatalogProgram();
-    Database* database = new Database();
-    Interpreter* interpreter = new Interpreter(datalogProgram, database);
-
-//    datalogProgram->ToString();
 
 
     return 0;

@@ -29,3 +29,7 @@ Header *Header::copy() {
     Header* header = new Header(headerNamesCopy);
     return header;
 }
+
+std::vector<std::string> Header::GetHeaderNames() {
+    return headerNames;
+}

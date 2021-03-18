@@ -6,7 +6,7 @@
 
 // This defines how we sort Tuples
 bool Tuple::operator< (const Tuple &other) const {
-    for (int i=0;i<values.size();i++) {
+    for (unsigned int i=0;i<values.size();i++) {
         if (values.at(i) > other.values.at(i)) {
             return false;
         } else if (values.at(i) < other.values.at(i)) {

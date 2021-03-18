@@ -20,10 +20,12 @@ class Relation {
 public:
     Relation(std::string name, Header* header);
     void AddTuple(Tuple tuple);
+    void AddTuples(std::set<Tuple> tuples);
     std::set<Tuple> GetTuples();
     Header* GetHeader();
     std::string ToString();
     std::string GetOutput(Predicate* queryPredicate);
+
 
 };
 
