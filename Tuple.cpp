@@ -13,7 +13,7 @@ bool Tuple::operator< (const Tuple &other) const {
             return true;
         }
     }
-    return true;
+    return false;
 }
 
 std::string Tuple::ToString() {
