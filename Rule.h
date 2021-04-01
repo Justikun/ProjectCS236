@@ -15,10 +15,17 @@ private:
 
 public:
     Rule();
+    void ToString();
+
+    //add methods
     void AddHeadPredicate(Predicate* headPredicate);
     void AddBodyPredicate(Predicate* bodyPredicate);
 
-    void ToString();
+    //Setters
+
+    //Getters
+    Predicate* GetHeadPredicate();
+    std::vector<Predicate*> GetBodyPredicates();
 };
 
 

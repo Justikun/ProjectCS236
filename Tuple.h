@@ -12,10 +12,11 @@ private:
     std::vector<std::string> values;
 public:
     Tuple();
-    void setValues(std::vector<std::string> values);
+    void SetValues(std::vector<std::string> values);
     std::string ToString();
     bool operator< (const Tuple & other) const;
-    std::string GetValue(int index);
+    std::string GetValue(int index) const;
+    std::vector<std::string> GetValues() const;
     Tuple copy();
 };
 

@@ -17,9 +17,22 @@ private:
     void LoadSchemes();
     void LoadFacts();
     void RunQueries();
+
 public:
     Interpreter(DatalogProgram* datalogProgram, Database* database);
     Relation* EvaluatePredicate(Predicate* p);
+    bool EvaluateRule(Rule* rule);
+    bool EvaluateRules();
+
+
+    vector<pair<int, int>> GetMatchingColumnIndices(Relation* relation1, Relation* relation2);
+    Header* CombineHeaders(Relation* relation1, Relation* relation2, vector<pair<int, int>> matchingColumnIndices);
+
+    Tuple CombineTuples(Tuple tuple1, Tuple tuple2, vector<pair<int, int>> matchingColumnIndices);
+
+    Relation* ComputeNaturalJoin(Relation* firstRelation, int secondRelationIndex, std::vector<Relation*> relations);
+    std::string CreateProjectString(Rule* headRule, Relation* combinedRelation);
+
     void Run();
 };
 

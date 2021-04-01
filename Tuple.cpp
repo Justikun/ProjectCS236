@@ -27,7 +27,7 @@ std::string Tuple::ToString() {
     return text;
 }
 
-void Tuple::setValues(std::vector<std::string> values) {
+void Tuple::SetValues(std::vector<std::string> values) {
     this->values = values;
 }
 
@@ -35,7 +35,7 @@ Tuple::Tuple() {
 
 }
 
-std::string Tuple::GetValue(int index) {
+std::string Tuple::GetValue(int index) const {
     return values.at(index);
 }
 
@@ -46,8 +46,12 @@ Tuple Tuple::copy() {
         valuesCopy.push_back(value);
     }
     Tuple tuple = Tuple();
-    tuple.setValues(valuesCopy);
+    tuple.SetValues(valuesCopy);
 
     return tuple;
+}
+
+std::vector<std::string> Tuple::GetValues() const {
+    return values;
 }
 

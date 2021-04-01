@@ -19,7 +19,7 @@ void Database::test() {
 //    values1.push_back("Charlie");
 //    values1.push_back("12 Apple St.");
 //    values1.push_back("555-1234");
-//    tuple1.setValues(values1);
+//    tuple1.SetValues(values1);
 //
 //    Tuple tuple2 = Tuple();
 //    std::vector<std::string> values2;
@@ -27,7 +27,7 @@ void Database::test() {
 //    values2.push_back("Snoopy");
 //    values2.push_back("12 Apple St.");
 //    values2.push_back("555-1234");
-//    tuple2.setValues(values2);
+//    tuple2.SetValues(values2);
 //
 //    std::set<Tuple> tuples;
 //

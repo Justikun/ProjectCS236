@@ -22,7 +22,7 @@ void DatalogProgram::AddFactPredicate(Predicate* predicate) {
 }
 
 void DatalogProgram::AddRulePredicate(Rule *rule) {
-    rulePredicates.push_back(rule);
+    rules.push_back(rule);
 }
 
 
@@ -51,12 +51,12 @@ void DatalogProgram::ToString() {
 
     ///printing Rules
 
-    std::cout << "Rules(" << rulePredicates.size() << "):\n";
+    std::cout << "Rules(" << rules.size() << "):\n";
 
 
-    for (unsigned int i=0;i<rulePredicates.size();i++) {
+    for (unsigned int i=0; i < rules.size(); i++) {
         std::cout << "  ";
-        rulePredicates.at(i)->ToString();
+        rules.at(i)->ToString();
         std::cout << "." << std::endl;
 
     }
@@ -103,5 +103,9 @@ std::vector<Predicate *> DatalogProgram::GetFactPredicates() {
 
 std::vector<Predicate *> DatalogProgram::GetQueryPredicates() {
     return queryPredicates;
+}
+
+std::vector<Rule *> DatalogProgram::GetRules() {
+    return rules;
 }
 

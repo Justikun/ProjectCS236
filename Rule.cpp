@@ -27,3 +27,11 @@ void Rule::ToString() {
         bodyPredicates.at(i)->ToString();
     }
 }
+
+Predicate *Rule::GetHeadPredicate() {
+    return headPredicate;
+}
+
+std::vector<Predicate *> Rule::GetBodyPredicates() {
+    return bodyPredicates;
+}

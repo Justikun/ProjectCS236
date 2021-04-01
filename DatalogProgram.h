@@ -12,7 +12,7 @@ class DatalogProgram {
 private:
     std::vector<Predicate*> schemePredicates;
     std::vector<Predicate*> factPredicates;
-    std::vector<Rule*> rulePredicates;
+    std::vector<Rule*> rules;
     std::vector<Predicate*> queryPredicates;
     std::set<std::string> domains;
 
@@ -30,6 +30,7 @@ public:
     std::vector<Predicate*> GetSchemePredicates();
     std::vector<Predicate*> GetFactPredicates();
     std::vector<Predicate*> GetQueryPredicates();
+    std::vector<Rule*> GetRules();
 
 
     void ToString();
