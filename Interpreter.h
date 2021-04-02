@@ -13,7 +13,6 @@ private:
     DatalogProgram* datalogProgram;
     Database* database;
     std::map<std::string,Relation*> relationMap;
-    std::map<std::string,Relation*> ruleRelationMap;
     std::map<std::string,Predicate*> schemeMap;
 
     void LoadSchemes();
@@ -34,9 +33,7 @@ public:
     Tuple CombineTuples(Tuple tuple1, Tuple tuple2, vector<pair<int, int>> matchingColumnIndices);
 
     Relation* ComputeNaturalJoin(Relation* firstRelation, int secondRelationIndex, std::vector<Relation*> relations);
-    std::string CreateProjectString(Rule* headRule, Relation* combinedRelation);
 
-    void UnionizeRelationMap();
     void Run();
 };
 

@@ -19,14 +19,18 @@ void Interpreter::Run() {
     //load the database
     database->SetRelationMap(relationMap);
 
+    int rulePasses = 0;
+
     cout<< "Rule Evaluation\n";
     bool addedTuples = EvaluateRules();
+    rulePasses++;
 
     while(addedTuples) {
         addedTuples = EvaluateRules();
+        rulePasses++;
     }
 
-
+    cout << "\nSchemes populated after " << rulePasses << " passes through the Rules.\n";
 
     RunQueries();
 }
@@ -162,7 +166,6 @@ void Interpreter::RunQueries() {
 bool Interpreter::EvaluateRules() {
     bool didAddTuple = false;
 
-    //looping through all Rules (right hand side)
     std::vector<Rule*> rules = datalogProgram->GetRules();
     for(size_t i=0;i<rules.size();i++) {
         if (EvaluateRule(rules.at(i))) {
@@ -192,16 +195,46 @@ bool Interpreter::EvaluateRule(Rule *rule) {
     }
 
     ProjectRelation(joinedRelation, rule->GetHeadPredicate());
+
     string headerName = rule->GetHeadPredicate()->GetName();
     joinedRelation->SetName(headerName);
 
-    ///outputing rule stuff for passoff
+    map<string, Relation*>::iterator it;
+    it = relationMap.find(joinedRelation->GetName());
+
+    vector<Tuple> addedTuples;
+
+    if (it != relationMap.end()) {
+        //found
+        Relation* existingRelation = relationMap[joinedRelation->GetName()];
+        // added = existingRelation->AddTuples(joinedRelation->GetTuples());
+        for (auto tuple : joinedRelation->GetTuples()) {
+            if (existingRelation->AddTuple(tuple)) {
+                addedTuples.push_back(tuple);
+            }
+        }
+
+    } else {
+        //not found
+        //insert into the map
+        if (joinedRelation->GetTuples().size() > 0) {
+            relationMap.insert(pair<string, Relation *>(joinedRelation->GetName(), joinedRelation));
+            for (auto tuple : joinedRelation->GetTuples()) {
+                addedTuples.push_back(tuple);
+            }
+        }
+    }
+
+    ///Print the rule
     rule->ToString();
-    for (auto tuple : joinedRelation->GetTuples()) {
-        for (size_t i=0;i<rule->GetHeadPredicate()->GetParameters().size();i++) {
+
+    ///Print the tuples
+    for (auto tuple : addedTuples) {
+
+        for (size_t i = 0; i < rule->GetHeadPredicate()->GetParameters().size(); i++) {
             Predicate *scheme = schemeMap.at(joinedRelation->GetName());
-            if (i==0) {
-                cout <<  "  ";
+            if (i == 0) {
+                cout << "  ";
             }
             if (i > 0) {
                 cout << ", ";
@@ -211,26 +244,9 @@ bool Interpreter::EvaluateRule(Rule *rule) {
         cout << endl;
     }
 
-    map<string, Relation*>::iterator it;
-    it = ruleRelationMap.find(joinedRelation->GetName());
-
-    if (it != ruleRelationMap.end()) {
-        //found
-        Relation* existingRelation = ruleRelationMap[joinedRelation->GetName()];
-        return existingRelation->AddTuples(joinedRelation->GetTuples());
-
-    } else {
-        //not found
-        //insert into the map
-        if (joinedRelation->GetTuples().size() > 0) {
-            cout << "Putting " << joinedRelation->GetName() << " into map" << endl;
-            ruleRelationMap.insert(pair<string, Relation *>(joinedRelation->GetName(), joinedRelation));
-            return true;
-        }
-    }
-
-    return false;
+    return addedTuples.size() > 0;
 }
+
 
 Relation* Interpreter::ComputeNaturalJoin(Relation* firstRelation, int secondRelationIndex, std::vector<Relation*> relations) {
     Relation* relation1 = firstRelation;
@@ -238,25 +254,8 @@ Relation* Interpreter::ComputeNaturalJoin(Relation* firstRelation, int secondRel
     set<Tuple> tuples1 = relation1->GetTuples();
     set<Tuple> tuples2 = relation2->GetTuples();
 
-    cout << "Rel 1: " << relation1->GetName() << endl;
-    for (auto tuple : relation1->GetTuples()) {
-        cout << tuple.ToString() << endl;
-    }
-
-    cout << "Rel 2: " << relation2->GetName() << endl;
-    for (auto tuple : relation2->GetTuples()) {
-        cout << tuple.ToString() << endl;
-    }
-
-
     //Get matching column indices
     vector<pair<int, int>> matchingColumnIndices = GetMatchingColumnIndices(relation1, relation2);
-
-    cout << "Matching indices" << endl;
-    for (auto index : matchingColumnIndices) {
-        cout << index.first << ", " << index.second << endl;
-    }
-
 
     //Get and combine header from relation1 and relation2
     Header* combinedHeader = CombineHeaders(relation1, relation2, matchingColumnIndices);
@@ -266,13 +265,25 @@ Relation* Interpreter::ComputeNaturalJoin(Relation* firstRelation, int secondRel
     set<Tuple> joinedTuples;
     for (auto tuple1 : tuples1) {
         for (auto tuple2: tuples2) {
-            for (auto indexPair : matchingColumnIndices) {
-                if (tuple1.GetValue(indexPair.first) == tuple2.GetValue(indexPair.second)) {
-                    //tuples are join-able
+            if (matchingColumnIndices.size() > 0) {
+                bool isJoinable = true;
+
+                for (auto indexPair : matchingColumnIndices) {
+                    if (tuple1.GetValue(indexPair.first) != tuple2.GetValue(indexPair.second)) {
+                        isJoinable = false;
+                        break;
+                    }
+                }
+
+                if (isJoinable) {
                     //combining tuples
                     Tuple combinedTuple = CombineTuples(tuple1, tuple2, matchingColumnIndices);
                     joinedTuples.insert(combinedTuple);
                 }
+            }
+            else {
+                Tuple combinedTuple = CombineTuples(tuple1, tuple2, matchingColumnIndices);
+                joinedTuples.insert(combinedTuple);
             }
         }
     }
@@ -289,22 +300,17 @@ Relation* Interpreter::ComputeNaturalJoin(Relation* firstRelation, int secondRel
     }
 
     secondRelationIndex++;
-    if (secondRelationIndex >= relations.size()) {
+    if (secondRelationIndex >= static_cast<int>(relations.size())) {
         return joinedRelation;
     }
 
     return ComputeNaturalJoin(joinedRelation, secondRelationIndex, relations);
 }
 
-std::string Interpreter::CreateProjectString(Rule* headRule, Relation* combinedRelation) {
-    //TODO: create and return string for the correct projection.
-
-    return std::__cxx11::string();
-}
-
 vector<pair<int, int>> Interpreter::GetMatchingColumnIndices(Relation* relation1, Relation* relation2) {
     //marking the matching headers
     vector<pair<int, int>> matchingColumnIndices;
+
     for (size_t i=0;i<relation1->GetHeader()->GetHeaderNames().size();i++) {
         for(size_t j=0;j<relation2->GetHeader()->GetHeaderNames().size();j++) {
             if (relation1->GetHeader()->GetHeaderNames().at(i) == relation2->GetHeader()->GetHeaderNames().at(j)) {
@@ -321,57 +327,49 @@ vector<pair<int, int>> Interpreter::GetMatchingColumnIndices(Relation* relation1
 }
 
 //this will get rid of the columns that don't match the head predicate parameters
-void Interpreter::ProjectRelation(Relation *relation, Predicate* headPredicate) {
-    //get the indices for the columns we want to keep
-    vector<int> indices;
-    for (size_t i=0;i<headPredicate->GetParameters().size();i++) {
-        string headColumnName = headPredicate->GetParameters().at(i)->ToString();
-        for (size_t j=0;j<relation->GetHeader()->GetHeaderNames().size();j++) {
-        string columnName = relation->GetHeader()->GetHeaderNames().at(j);
-            if (headColumnName == columnName) {
-                indices.push_back(j);
+void Interpreter::ProjectRelation(Relation *relation, Predicate* headPredicate) {\
+
+    // Change the header to match the head predicate
+    vector<string> headerParameterNames;
+    for(size_t i=0;i<headPredicate->GetParameters().size();i++) {
+        string parameterName = headPredicate->GetParameters().at(i)->ToString();
+        headerParameterNames.push_back(parameterName);
+    }
+
+    // Build a Map of the header names to what index they are in the relation tuples
+    map<std::string, int> headerMap;
+    vector<string> headerNames = relation->GetHeader()->GetHeaderNames();
+
+    for(auto parameterName : headerParameterNames) {
+        for (unsigned int i=0; i< headerNames.size(); i++) {
+            if (parameterName == headerNames.at(i)) {
+                headerMap.insert(pair<string, int>(parameterName, i));
             }
         }
     }
 
     set<Tuple> projectedTuples;
     auto tuples = relation->GetTuples();
+
     //getting the values for the columns that are in the head predicate and putting them into the relation
     for (auto tuple : tuples) {
         Tuple resultTuple;
         vector<string> values;
-        for (size_t i=0;i<tuple.GetValues().size();i++) {
-            for (size_t j = 0; j < indices.size(); j++) {
-                if (i==j) {
-                    values.push_back(tuple.GetValue(i));
-                }
-            }
+
+        for (auto headerName : headerParameterNames) {
+            int index = headerMap.at(headerName);
+            values.push_back(tuple.GetValue(index));
         }
+
         resultTuple.SetValues(values);
         projectedTuples.insert(resultTuple);
     }
 
     relation->SetTuples(projectedTuples);
 
-    // changing the the header to match the head predicate
-    vector<string> resultHeaderNames;
-    for(size_t i=0;i<headPredicate->GetParameters().size();i++) {
-        resultHeaderNames.push_back(headPredicate->GetParameters().at(i)->ToString());
-    }
-    Header* resultHeader = new Header(resultHeaderNames);
+    // Assign this new header to the relation
+    Header* resultHeader = new Header(headerParameterNames);
     relation->SetHeader(resultHeader);
-}
-
-void Interpreter::UnionizeRelationMap() {
-    auto it = ruleRelationMap.begin();
-
-    while (it != ruleRelationMap.end()) {
-        string relationName = it->first;
-        Relation* ruleRelation = it->second;
-
-        Relation* existingRelation = relationMap.at(relationName);
-        existingRelation->AddTuples(ruleRelation->GetTuples());
-    }
 }
 
 Tuple Interpreter::CombineTuples(Tuple tuple1, Tuple tuple2, vector<pair<int, int>> matchingColumnIndices) {
@@ -379,17 +377,26 @@ Tuple Interpreter::CombineTuples(Tuple tuple1, Tuple tuple2, vector<pair<int, in
     Tuple combinedTuple = Tuple();
     vector<string> values;
 
+    // Add all the values for tuple 1
     for (auto value : tuple1.GetValues()) {
         values.push_back(value);
     }
 
-    for (size_t i=0;i<tuple2.GetValues().size();i++) {
-        auto itr = matchingColumnIndices.begin();
-        while(itr != matchingColumnIndices.end()) {
-            if (itr->second != i) {
-                values.push_back(tuple2.GetValue(i));
+    if (matchingColumnIndices.size() > 0) {
+        for (size_t i = 0; i < tuple2.GetValues().size(); i++) {
+            auto itr = matchingColumnIndices.begin();
+            while (itr != matchingColumnIndices.end()) {
+                if (static_cast<unsigned int>(itr->second) != i) {
+                    values.push_back(tuple2.GetValue(i));
+                }
+                itr++;
             }
-            itr++;
+        }
+    }
+    else {
+        // Add all the values for tuple 1
+        for (auto value : tuple2.GetValues()) {
+            values.push_back(value);
         }
     }
 
@@ -405,14 +412,21 @@ Header* Interpreter::CombineHeaders(Relation *relation1, Relation *relation2, ve
         combinedHeaderNames.push_back(relation1->GetHeader()->GetHeaderNames().at(i));
     }
 
-    //adding the unique names from relation2
-    for (size_t i=0;i<relation2->GetHeader()->GetHeaderNames().size();i++) {
-        auto itr = matchingColumnIndices.begin();
-        while(itr != matchingColumnIndices.end()) {
-            if (itr->second != i) {
-                combinedHeaderNames.push_back(relation2->GetHeader()->GetHeaderNames().at(i));
+    if (matchingColumnIndices.size() > 0) {
+        //adding the unique names from relation2
+        for (size_t i = 0; i < relation2->GetHeader()->GetHeaderNames().size(); i++) {
+            auto itr = matchingColumnIndices.begin();
+            while (itr != matchingColumnIndices.end()) {
+                if (static_cast<unsigned int>(itr->second) != i) {
+                    combinedHeaderNames.push_back(relation2->GetHeader()->GetHeaderNames().at(i));
+                }
+                itr++;
             }
-            itr++;
+        }
+    }
+    else {
+        for (size_t i=0;i<relation2->GetHeader()->GetHeaderNames().size();i++) {
+            combinedHeaderNames.push_back(relation2->GetHeader()->GetHeaderNames().at(i));
         }
     }
 
