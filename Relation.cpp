@@ -24,8 +24,9 @@ std::string Relation::ToString() {
 }
 
 
-void Relation::AddTuple(Tuple tuple) {
-    tuples.insert(tuple);
+bool Relation::AddTuple(Tuple tuple) {
+    //returns true if added
+    return tuples.insert(tuple).second;
 }
 
 Header *Relation::GetHeader() {
@@ -81,8 +82,31 @@ string Relation::GetOutput(Predicate *queryPredicate) {
     return text.str();
 }
 
-void Relation::AddTuples(std::set<Tuple> tuples) {
+//if at least 1 tuple gets added, return true
+bool Relation::AddTuples(std::set<Tuple> tuples) {
+    bool added = false;
     for (Tuple tuple: tuples) {
-        AddTuple(tuple);
+
+        if (AddTuple(tuple))  {
+            added = true;
+        }
     }
+
+    return added;
+}
+
+void Relation::SetTuples(std::set<Tuple> tuples) {
+    this->tuples = tuples;
+}
+
+void Relation::SetHeader(Header* header) {
+    this->header = header;
+}
+
+string Relation::GetName() {
+    return name;
+}
+
+void Relation::SetName(std::string name) {
+    this->name = name;
 }

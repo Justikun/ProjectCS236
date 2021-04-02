@@ -18,14 +18,17 @@ class Relation {
     Header* header;
     std::set<Tuple> tuples;
 public:
+    std::string GetName();
+    void SetName(std::string name);
     Relation(std::string name, Header* header);
-    void AddTuple(Tuple tuple);
-    void AddTuples(std::set<Tuple> tuples);
+    bool AddTuple(Tuple tuple);
+    bool AddTuples(std::set<Tuple> tuples);
     std::set<Tuple> GetTuples();
     Header* GetHeader();
+    void SetHeader(Header* header);
     std::string ToString();
     std::string GetOutput(Predicate* queryPredicate);
-
+    void SetTuples(std::set<Tuple> tuples);
 
 };
 

@@ -14,6 +14,8 @@ public:
     Database();
     void test();
 
+    std::map<std::string, Relation*> GetRelationMap();
+    void SetRelationMap(std::map<std::string, Relation*> relationshipMap);
 };
 
 

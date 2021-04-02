@@ -26,6 +26,7 @@ void Rule::ToString() {
         }
         bodyPredicates.at(i)->ToString();
     }
+    std::cout << std::endl;
 }
 
 Predicate *Rule::GetHeadPredicate() {

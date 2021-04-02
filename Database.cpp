@@ -48,3 +48,10 @@ void Database::test() {
 //    Relation* relation = new Relation("snap", tuples);
 }
 
+std::map<std::string, Relation *> Database::GetRelationMap() {
+    return relationshipMap;
+}
+
+void Database::SetRelationMap(std::map<std::string, Relation*> relationshipMap) {
+    this->relationshipMap = relationshipMap;
+}
