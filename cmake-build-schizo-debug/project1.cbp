@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="project1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="project1">
+				<Option output="/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/project1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 project1"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="project1/fast">
+				<Option output="/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/project1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 project1/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.PBjlkNUOBD/cmake-build-schizo-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Automaton.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Automaton.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/BlockCommentAutomaton.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/BlockCommentAutomaton.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/CommentAutomaton.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/CommentAutomaton.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Database.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Database.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/DatalogProgram.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/DatalogProgram.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/EndOfFileAutomaton.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/EndOfFileAutomaton.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Expression.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Expression.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Header.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Header.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/IDAutomaton.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/IDAutomaton.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Interpreter.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Interpreter.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Lexer.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Lexer.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/MatcherAutomaton.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/MatcherAutomaton.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/NewLineAutomaton.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/NewLineAutomaton.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Parameter.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Parameter.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Parser.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Parser.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/PlainParameter.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/PlainParameter.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Predicate.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Predicate.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Relation.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Relation.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Rule.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Rule.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/StringAutomaton.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/StringAutomaton.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Token.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Token.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Tuple.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/Tuple.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/UndefinedAutomata.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/UndefinedAutomata.h">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/main.cpp">
+			<Option target="project1"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.PBjlkNUOBD/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
